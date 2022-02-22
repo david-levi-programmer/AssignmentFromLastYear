@@ -16,10 +16,7 @@ void Text::Shutdown()
 	TTF_Quit();
 }
 
-Text::Text()
-{
-
-}
+Text::Text() {}
 
 void Text::SetText(const std::string text)
 {

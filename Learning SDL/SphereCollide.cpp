@@ -1,9 +1,6 @@
 #include "SphereCollide.h"
 
-SphereCollide::SphereCollide()
-{
-
-}
+SphereCollide::SphereCollide() {}
 
 void SphereCollide::SetPosition(int x, int y)
 {

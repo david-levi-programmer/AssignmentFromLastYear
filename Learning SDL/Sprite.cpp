@@ -2,10 +2,7 @@
 #include "Sprite.h"
 #include <SDL_image.h>
 
-Sprite::Sprite()
-{
-
-}
+Sprite::Sprite() {}
 
 void Sprite::IsAnimated(bool flag)
 {

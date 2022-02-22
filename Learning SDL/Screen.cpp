@@ -2,9 +2,7 @@
 #include <string>
 #include "Screen.h"
 
-Screen::Screen()
-{
-}
+Screen::Screen() {}
 
 bool Screen::Initilize(const std::string & windowTitle, int width, int height)
 {

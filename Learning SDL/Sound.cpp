@@ -1,10 +1,7 @@
 #include "Sound.h"
 #include <iostream>
 
-Sound::Sound()
-{
-
-}
+Sound::Sound() {}
 
 bool Sound::Load(const std::string& filename)
 {
@@ -37,4 +34,5 @@ void Sound::Play(int loop)
 	{
 		std::cout << "Error playing audio file." << std::endl;
 	}
+
 }
