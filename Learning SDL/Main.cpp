@@ -69,6 +69,8 @@ int main(int argc, char* argv[])
 			IsGameRunning = false;
 		}
 
+		//======================Code for debugging================
+
 		if (input.GetKeyDown() == SDLK_LEFT)
 		{
 			std::cout << "Left key pressed. Move player left." << std::endl;
@@ -102,6 +104,7 @@ int main(int argc, char* argv[])
 		MousePos mousePos = input.GetMousePosition();
 		std::cout << "Mouse cursor is at position (" << mousePos.x << "," << mousePos.y << ")" << std::endl;
 
+		//==================
 		//=======================Player State==================
 
 		player.Update(input);
@@ -112,12 +115,12 @@ int main(int argc, char* argv[])
 			player.Render(screen);
 		}
 
-		//======================================================
+		//=====================================================
 
 		stone.Update(input);
 		stone.Render(screen);
 
-		//===========Collision========
+		//===========Collision=================================
 		BoxCollide playerCollider = player.GetCollider();
 		BoxCollide stoneCollider = stone.GetCollider();
 
