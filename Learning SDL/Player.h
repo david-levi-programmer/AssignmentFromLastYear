@@ -39,22 +39,22 @@ public:
 
 	void SetSpeed(int speed);
 	void SetState(State state);
-	//const BoxCollide& GetCollider() const;
-	const SphereCollide& GetCollider() const;
+	const BoxCollide& GetCollider() const;
+	//const SphereCollide& GetCollider() const;
 	virtual void Render(Screen& screen);
 	virtual void Update(Input& input);
 
 private:
 
 	Vector2D m_direction;
-	Direction m_facingDirection;
-	int m_speed;
-	Jump m_jumpDirection;
+	Direction m_facingDirection = RIGHT;
+	int m_speed = 0;
+	Jump m_jumpDirection = NONE;
 
 	Sprite m_image[TOTAL_STATES]; 
 	Sound m_footstep;
-	State m_state;
+	State m_state = IDLE;
 
 	BoxCollide m_collider;
-	SphereCollide m_collide;
+	//SphereCollide m_collide;
 };

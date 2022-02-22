@@ -2,10 +2,6 @@
 
 Input::Input()
 {
-    m_KeyPress = false;
-    m_MouseClick = false;
-    m_ClosedWindow = false;
-
 }
 
 char Input::GetKeyUp()
@@ -50,13 +46,10 @@ const MousePos& Input::GetMousePosition()
 
 void Input::Update()
 {
-    
     SDL_Event events;
-    //m_keyUp = ' ';
 
     while(SDL_PollEvent(&events))
     {
-
         if (events.type == SDL_QUIT)
         {
             m_ClosedWindow = true;
@@ -91,7 +84,5 @@ void Input::Update()
             m_mousePosition.x = events.motion.x;
             m_mousePosition.y = events.motion.y;
         }
-    
     }
-
 }

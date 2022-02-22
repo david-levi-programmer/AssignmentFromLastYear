@@ -2,7 +2,7 @@
 
 SphereCollide::SphereCollide()
 {
-	m_radius = 0;
+
 }
 
 void SphereCollide::SetPosition(int x, int y)

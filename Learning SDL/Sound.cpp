@@ -3,7 +3,7 @@
 
 Sound::Sound()
 {
-	m_sound = nullptr;
+
 }
 
 bool Sound::Load(const std::string& filename)

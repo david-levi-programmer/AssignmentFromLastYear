@@ -2,10 +2,7 @@
 
 GameObject::GameObject()
 {
-	m_angle = 0.0f;
-	m_isActive = true;
-	m_isAlive = true;
-	m_isVisible = true;
+
 }
 
 GameObject::~GameObject()
@@ -25,6 +22,7 @@ void GameObject::SetTag(const std::string& tag)
 
 void GameObject::Update(const Input& input)
 {
+
 }
 
 void GameObject::SetPosition(int x, int y)

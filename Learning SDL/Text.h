@@ -3,6 +3,7 @@
 #include <string>
 #include <SDL_ttf.h>
 #include "Screen.h"
+
 class Text
 {
 
@@ -25,12 +26,13 @@ public:
 
 private:
 
-	bool m_isDirty;
+	bool m_isDirty = true;
 
 	std::string m_text;
 
-	TTF_Font* m_font;
-	SDL_Color m_color;
-	SDL_Point m_dimension;
+	TTF_Font* m_font = nullptr;
+	SDL_Color m_color = { 255, 255, 255, 255 };
+	SDL_Point m_dimension = { 10, 10 };
 	SDL_Texture* m_texture;
+
 };

@@ -21,4 +21,3 @@ private:
 	Vector2D m_dimension;
 
 };
-

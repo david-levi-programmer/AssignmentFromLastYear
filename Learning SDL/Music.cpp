@@ -19,7 +19,7 @@ void Music::Shutdown()
 
 Music::Music()
 {
-	m_music = nullptr;
+
 }
 
 bool Music::Load(const std::string& filename)

@@ -25,6 +25,6 @@ public:
 
 private:
 
-	Mix_Music* m_music;
+	Mix_Music* m_music = nullptr;
 
 };

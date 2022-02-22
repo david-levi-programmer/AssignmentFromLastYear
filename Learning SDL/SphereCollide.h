@@ -4,7 +4,6 @@
 class SphereCollide
 {
 
-
 public:
 
 	SphereCollide();
@@ -16,8 +15,7 @@ public:
 
 private:
 
-	int m_radius;
+	int m_radius = 0;
 	Vector2D m_position;
 
 };
-

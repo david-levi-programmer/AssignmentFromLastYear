@@ -14,7 +14,6 @@
 
 bool IsGameRunning = true;
 
-
 int main(int argc, char* argv[])
 {
 	
@@ -119,7 +118,7 @@ int main(int argc, char* argv[])
 		stone.Render(screen);
 
 		//===========Collision========
-		/*BoxCollide playerCollider = player.GetCollider();
+		BoxCollide playerCollider = player.GetCollider();
 		BoxCollide stoneCollider = stone.GetCollider();
 
 		if (playerCollider.IsColliding(stoneCollider))
@@ -131,8 +130,8 @@ int main(int argc, char* argv[])
 		{
 			std::cout << "No collision." << std::endl;
 		}
-		*/
-		SphereCollide playerCollider = player.GetCollider();
+		
+		/*SphereCollide playerCollider = player.GetCollider();
 		SphereCollide stoneCollider = stone.GetCollider();
 
 		if (playerCollider.IsColliding(stoneCollider))
@@ -143,7 +142,7 @@ int main(int argc, char* argv[])
 		else
 		{
 			std::cout << "No collision." << std::endl;
-		}
+		}*/
 		//============================
 
 		score->Render(screen);

@@ -6,8 +6,10 @@ struct MousePos
 	int x;
 	int y;
 };
+
 class Input
 {
+
 public:
 	Input();
 	void Update();
@@ -23,16 +25,19 @@ public:
 	bool ClosedWindow();
 
 	const MousePos& GetMousePosition();
+
 private:
+
 	char m_keyUp;
 	char m_keyDown;
 
-	bool m_KeyPress;
-	bool m_MouseClick;
-	bool m_ClosedWindow;
+	bool m_KeyPress = false;
+	bool m_MouseClick = false;
+	bool m_ClosedWindow = false;
 
 	int m_mouseButtonUp;
 	int m_mouseButtonDown;
 
 	MousePos m_mousePosition;
+
 };

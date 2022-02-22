@@ -3,10 +3,6 @@
 
 Player::Player(Screen& screen)
 {
-	m_speed = 0;
-	m_state = IDLE;
-	m_facingDirection = RIGHT;
-	m_jumpDirection = NONE;
 	m_image[IDLE].Load("Assets/Images/protag.png", screen); //downloaded for free from OpenGameArt.org
 	for (int i = 0; i < TOTAL_STATES; i++)
 	{
@@ -20,6 +16,7 @@ Player::Player(Screen& screen)
 		{
 			m_image[i].IsLooping(false);
 		}
+
 		else
 		{
 			m_image[i].IsLooping(true);
@@ -44,15 +41,15 @@ void Player::SetState(State state)
 	m_state = state;
 }
 
-/*const BoxCollide& Player::GetCollider() const
+const BoxCollide& Player::GetCollider() const
 {
 	return m_collider;
-}*/
+}
 
-const SphereCollide& Player::GetCollider() const
+/*const SphereCollide& Player::GetCollider() const
 {
 	return m_collide;
-}
+}*/
 
 void Player::Render(Screen& screen)
 {
@@ -62,6 +59,7 @@ void Player::Render(Screen& screen)
 		{
 			m_image[m_state].Render(m_position.x, m_position.y, m_angle, screen, Sprite::NO_FLIP);
 		}
+
 		else
 		{
 			m_image[m_state].Render(m_position.x, m_position.y, m_angle, screen, Sprite::HORZ_FLIP);
@@ -108,6 +106,7 @@ void Player::Update(Input& input)
 			m_direction.x = -1;
 			m_direction.y = 0;
 		}
+
 		else
 		{
 			m_direction.x = 1;
@@ -122,6 +121,7 @@ void Player::Update(Input& input)
 			m_direction.x = 0;
 			m_direction.y = -1;
 		}
+
 		else
 		{
 			m_direction.x = 0;
@@ -141,6 +141,6 @@ void Player::Update(Input& input)
 
 	m_image[m_state].Update();
 
-	m_collide.SetRadius(m_size.x / 2);
-	m_collide.SetPosition(m_position.x, m_position.y);
+	/*m_collide.SetRadius(m_size.x / 2);
+	m_collide.SetPosition(m_position.x, m_position.y);*/
 }

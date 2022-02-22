@@ -41,13 +41,13 @@ public:
 
 protected:
 
-	float m_angle;
+	float m_angle = 0.0f;
 
 	std::string m_tag;
 
-	bool m_isActive;
-	bool m_isVisible;
-	bool m_isAlive;
+	bool m_isActive = true;
+	bool m_isVisible = true;
+	bool m_isAlive = true;
 
 	Vector2D m_size;
 	Vector2D m_position;

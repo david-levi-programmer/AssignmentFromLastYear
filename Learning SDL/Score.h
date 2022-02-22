@@ -4,6 +4,7 @@
 
 class Score : public GameObject
 {
+
 public:
 
 	Score();
@@ -16,6 +17,7 @@ public:
 
 private:
 
-	int m_score;
+	int m_score = 0;
 	Text m_text;
+
 };

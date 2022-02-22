@@ -19,7 +19,6 @@ public:
 
 private:
 
-	Mix_Chunk* m_sound;
+	Mix_Chunk* m_sound = nullptr;
 
 };
-
