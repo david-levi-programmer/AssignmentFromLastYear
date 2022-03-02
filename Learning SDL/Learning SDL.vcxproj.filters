@@ -31,6 +31,12 @@
     <Filter Include="Source Files\Components">
       <UniqueIdentifier>{ec856fdc-1acc-4875-8be8-c8412144ddbf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Game State">
+      <UniqueIdentifier>{e0fb4721-15fd-4502-a3b6-8224c8ecab54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game State">
+      <UniqueIdentifier>{1fcdfd21-8705-4936-b1e1-35099142eb12}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -75,6 +81,15 @@
     <ClCompile Include="Sprite.cpp">
       <Filter>Source Files\Components</Filter>
     </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Source Files\Game State</Filter>
+    </ClCompile>
+    <ClCompile Include="State.cpp">
+      <Filter>Source Files\Game State</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayState.cpp">
+      <Filter>Source Files\Game State</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameObject.h">
@@ -118,6 +133,15 @@
     </ClInclude>
     <ClInclude Include="Sprite.h">
       <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Header Files\Game State</Filter>
+    </ClInclude>
+    <ClInclude Include="State.h">
+      <Filter>Header Files\Game State</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayState.h">
+      <Filter>Header Files\Game State</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
