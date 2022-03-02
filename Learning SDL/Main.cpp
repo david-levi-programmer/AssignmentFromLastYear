@@ -3,13 +3,13 @@
 #include <string>
 #include <SDL.h>
 #include "Game.h"
-#include "State.h"
+#include "PlayState.h"
 
 bool IsGameRunning = true;
 
 int main(int argc, char* argv[])
 {
-	std::unique_ptr<Game> game = std::make_unique<Game>(new MenuState);
+	std::unique_ptr<Game> game = std::make_unique<Game>(new PlayState);
 
 	if (game->Initialize())
 	{
