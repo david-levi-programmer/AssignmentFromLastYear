@@ -27,4 +27,6 @@ public:
 
 private:
 
+	bool IsGameRunning = true;
+
 };
