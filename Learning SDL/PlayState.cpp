@@ -1,10 +1,16 @@
 #include "PlayState.h"
+#include <iostream>
 #include <string>
 
 bool PlayState::OnEnter()
 {
-	screen.Clear();
+	Screen screen;
 	
+	Input input;
+	
+	screen.Clear();
+
+	Sprite background;
 	background.Load("Assets/Images/500_F_286150681_7Wct7Snh4fGqCYWD3NN5DQTXIsvH5Gw2.jpg", screen); //Found on Google Images, searching for royalty-free images
 	background.SetSpriteDimension(1280, 720);
 	background.SetImageDimension(1, 1, 1280, 720);
@@ -82,7 +88,6 @@ State* PlayState::Update()
 		MousePos mousePos = input.GetMousePosition();
 		std::cout << "Mouse cursor is at position (" << mousePos.x << "," << mousePos.y << ")" << std::endl;
 
-		//==================
 		//=======================Player State==================
 
 		player.Update(input);
@@ -153,6 +158,4 @@ void PlayState::OnExit()
 
 	background.Unload();
 	screen.Shutdown();
-
-	return 0;
 }

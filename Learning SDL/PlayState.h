@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Game.h"
 #include "State.h"
 #include "Screen.h"
 #include "Input.h"

@@ -55,7 +55,3 @@ bool Game::Run()
     
     return true;
 }
-
-void Game::Shutdown()
-{
-}

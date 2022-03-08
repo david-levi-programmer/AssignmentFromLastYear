@@ -13,7 +13,7 @@ public:
 	Game(State* initialState);
 	bool Initialize();
 	bool Run();
-	void Shutdown();
+	void Shutdown() {}
 
 private:
 
