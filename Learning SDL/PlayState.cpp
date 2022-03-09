@@ -2,26 +2,26 @@
 #include <iostream>
 #include <string>
 
+Input input;
+Screen screen;
+Sprite background;
+Player player(screen);
+Block stone(screen);
+Score* score = new Score;
+
 bool PlayState::OnEnter()
 {
-	Screen screen;
-	
-	Input input;
-	
 	screen.Clear();
 
-	Sprite background;
 	background.Load("Assets/Images/500_F_286150681_7Wct7Snh4fGqCYWD3NN5DQTXIsvH5Gw2.jpg", screen); //Found on Google Images, searching for royalty-free images
 	background.SetSpriteDimension(1280, 720);
 	background.SetImageDimension(1, 1, 1280, 720);
 
-	Player player(screen);
 	player.SetPosition(50, 450);
 	player.SetAngle(0.0);
 	player.SetSize(100, 100);
 	player.SetSpeed(5);
 
-	Block stone(screen);
 	stone.SetPosition(1000, 500);
 	stone.SetAngle(0.0);
 	stone.SetSize(50, 50);
@@ -31,7 +31,6 @@ bool PlayState::OnEnter()
 	music.Load("Assets/Audio/Music/bensound-clearday.mp3"); // Composed by Bensound and downloaded from his website
 	music.Play(Music::PlayLoop::PLAY_ENDLESS);
 
-	Score* score = new Score;
 	score->SetScore(100);
     
     return true;
