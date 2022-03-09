@@ -16,7 +16,13 @@ void Text::Shutdown()
 	TTF_Quit();
 }
 
-Text::Text() {}
+Text::Text()
+{
+	m_font = nullptr;
+	m_isDirty = true;
+	m_color = { 255, 255, 255, 255 };
+	m_dimension = { 10, 10 };
+}
 
 void Text::SetText(const std::string text)
 {
