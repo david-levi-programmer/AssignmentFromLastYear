@@ -1,6 +1,11 @@
 #include "PlayState.h"
 #include <iostream>
 #include <string>
+#include "Score.h"
+#include "BoxCollide.h"
+#include "Player.h"
+#include "Vector2D.h"
+#include "Block.h"
 
 Input input;
 Screen screen;
@@ -11,8 +16,6 @@ Score* score = new Score;
 
 bool PlayState::OnEnter()
 {
-	screen.Clear();
-
 	background.Load("Assets/Images/500_F_286150681_7Wct7Snh4fGqCYWD3NN5DQTXIsvH5Gw2.jpg", screen); //Found on Google Images, searching for royalty-free images
 	background.SetSpriteDimension(1280, 720);
 	background.SetImageDimension(1, 1, 1280, 720);
@@ -54,7 +57,7 @@ State* PlayState::Update()
 
 		//======================Code for debugging================
 
-		if (input.GetKeyDown() == SDLK_LEFT)
+		/*if (input.GetKeyDown() == SDLK_LEFT)
 		{
 			std::cout << "Left key pressed. Move player left." << std::endl;
 		}
@@ -82,10 +85,10 @@ State* PlayState::Update()
 		else if (input.GetMouseButtonDown() == SDL_BUTTON_MIDDLE)
 		{
 			std::cout << "Mouse wheel pressed" << std::endl;
-		}
+		}*/
 
-		MousePos mousePos = input.GetMousePosition();
-		std::cout << "Mouse cursor is at position (" << mousePos.x << "," << mousePos.y << ")" << std::endl;
+		/*MousePos mousePos = input.GetMousePosition();
+		std::cout << "Mouse cursor is at position (" << mousePos.x << "," << mousePos.y << ")" << std::endl;*/
 
 		//=======================Player State==================
 
@@ -99,7 +102,7 @@ State* PlayState::Update()
 		BoxCollide playerCollider = player.GetCollider();
 		BoxCollide stoneCollider = stone.GetCollider();
 
-		if (playerCollider.IsColliding(stoneCollider))
+		/*if (playerCollider.IsColliding(stoneCollider))
 		{
 			std::cout << "Collision!" << std::endl;
 		}
@@ -107,7 +110,7 @@ State* PlayState::Update()
 		else
 		{
 			std::cout << "No collision." << std::endl;
-		}
+		}*/
 
 		/*SphereCollide playerCollider = player.GetCollider();
 		SphereCollide stoneCollider = stone.GetCollider();
@@ -123,6 +126,11 @@ State* PlayState::Update()
 		}*/
 		//============================
 
+	}
+
+	if (!IsGameRunning)
+	{
+		return nullptr;
 	}
 
 	return this;
@@ -151,9 +159,6 @@ bool PlayState::Render()
 void PlayState::OnExit()
 {
 	delete score;
-
-	Music::Shutdown(); //Only called once after the game is over
-	Text::Shutdown();
 
 	background.Unload();
 	screen.Shutdown();

@@ -11,6 +11,7 @@ class Input
 {
 
 public:
+
 	Input();
 	void Update();
 

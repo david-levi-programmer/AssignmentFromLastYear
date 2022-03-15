@@ -1,13 +1,8 @@
 #include "Game.h"
 #include "Input.h"
 #include "Main.h"
-#include "Player.h"
-#include "Vector2D.h"
-#include "Block.h"
 #include "Music.h"
 #include "Text.h"
-#include "Score.h"
-#include "BoxCollide.h"
 
 Screen Game::m_screen;
 
@@ -18,9 +13,9 @@ Game::Game(State* initialState)
 
 bool Game::Initialize()
 {
-    //Music::Initialize(); // only called once before music is loaded
-    //Text::Initialize();
-    Sprite background;
+	Music music;
+	Text font;
+	Screen screen;
 
     if (!m_screen.Initilize("My game", 1280, 720))
     {
@@ -36,7 +31,13 @@ bool Game::Run()
 
     while (m_gameState)
     {
-        State* nextState = m_gameState->Update();
+		//screen.Clear();
+
+		Input input;
+
+		input.Update();
+		
+		State* nextState = m_gameState->Update();
 
         m_gameState->Render();
 
@@ -53,4 +54,11 @@ bool Game::Run()
     }
     
     return true;
+}
+
+void Game::Shutdown()
+{
+	Music::Shutdown();
+	Text::Shutdown();
+	//screen.Shutdown();
 }

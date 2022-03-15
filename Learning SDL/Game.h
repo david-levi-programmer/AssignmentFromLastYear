@@ -15,7 +15,7 @@ public:
 	Game(State* initialState);
 	bool Initialize();
 	bool Run();
-	void Shutdown() {}
+	void Shutdown();
 
 	static Screen& GetScreen() 
 	{
@@ -26,5 +26,5 @@ private:
 
 	std::unique_ptr<State> m_gameState;
 	static Screen m_screen;
-	//static Input input;
+	//static Input m_input;
 };
