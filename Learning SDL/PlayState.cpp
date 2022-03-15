@@ -159,7 +159,8 @@ bool PlayState::Render()
 void PlayState::OnExit()
 {
 	delete score;
-
+	Music::Shutdown();
+	Text::Shutdown();
 	background.Unload();
 	screen.Shutdown();
 }
