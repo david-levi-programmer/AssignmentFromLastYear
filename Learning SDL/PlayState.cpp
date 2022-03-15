@@ -9,7 +9,6 @@
 
 Input input;
 Screen screen;
-Sprite background;
 Player player(screen);
 Block stone(screen);
 Score* score = new Score;
@@ -54,6 +53,7 @@ State* PlayState::Update()
 		{
 			IsGameRunning = false;
 		}
+		
 
 		//======================Code for debugging================
 

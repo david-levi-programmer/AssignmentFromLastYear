@@ -30,5 +30,6 @@ public:
 private:
 
 	bool IsGameRunning = true;
+	Sprite background;
 
 };

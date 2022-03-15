@@ -16,7 +16,7 @@ public:
 		VERT_FLIP = SDL_FLIP_VERTICAL
 	};
 
-	Sprite();
+	Sprite() {}
 	~Sprite() {}
 
 	void IsAnimated(bool flag);

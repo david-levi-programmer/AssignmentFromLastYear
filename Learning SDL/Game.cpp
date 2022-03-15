@@ -3,6 +3,7 @@
 #include "Main.h"
 #include "Music.h"
 #include "Text.h"
+#include "Sprite.h"
 
 Screen Game::m_screen;
 
@@ -16,6 +17,7 @@ bool Game::Initialize()
 	Music music;
 	Text font;
 	Screen screen;
+	Sprite background;
 
     if (!m_screen.Initilize("My game", 1280, 720))
     {
