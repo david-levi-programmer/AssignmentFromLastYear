@@ -31,5 +31,6 @@ private:
 
 	bool IsGameRunning = true;
 	Sprite background;
+	Score* score = new Score;
 
 };

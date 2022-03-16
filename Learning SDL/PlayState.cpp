@@ -11,7 +11,6 @@ Input input;
 Screen screen;
 Player player(screen);
 Block stone(screen);
-Score* score = new Score;
 
 bool PlayState::OnEnter()
 {
