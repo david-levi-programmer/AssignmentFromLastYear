@@ -24,7 +24,7 @@ Player::Player()
 		}
 	}
 
-	m_footstep.Load("Assets/Audio/Sounds/Footsteps.wav");
+	//m_footstep.Load("Assets/Audio/Sounds/Footsteps.wav");
 }
 
 Player::~Player()
