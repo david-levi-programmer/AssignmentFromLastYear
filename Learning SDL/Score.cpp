@@ -18,7 +18,7 @@ void Score::SetScore(int score)
 	m_text.SetText(std::to_string(m_score));
 }
 
-void Score::Render(Screen& screen)
+void Score::Render()
 {
-	m_text.Render(10, 10, screen);
+	m_text.Render(10, 10);
 }

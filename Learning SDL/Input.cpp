@@ -1,6 +1,10 @@
 #include "Input.h"
 
-Input::Input() {}
+Input* Input::Instance()
+{
+	static Input* input = new Input;
+	return input;
+}
 
 char Input::GetKeyUp()
 {
@@ -41,6 +45,7 @@ const MousePos& Input::GetMousePosition()
 {
     return m_mousePosition;
 }
+
 
 void Input::Update()
 {

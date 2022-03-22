@@ -34,15 +34,15 @@ public:
 		NONE
 	};
 
-	Player(Screen& screen);
+	Player();
 	~Player();
 
 	void SetSpeed(int speed);
 	void SetState(State state);
 	const BoxCollide& GetCollider() const;
 	//const SphereCollide& GetCollider() const;
-	virtual void Render(Screen& screen);
-	virtual void Update(Input& input);
+	virtual void Render();
+	virtual void Update();
 
 private:
 

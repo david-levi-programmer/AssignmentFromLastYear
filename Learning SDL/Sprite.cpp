@@ -37,7 +37,7 @@ void Sprite::SetImageDimension(int columns, int rows, int width, int height)
 	m_celDimension.y = height / rows;
 }
 
-bool Sprite::Load(const std::string& filename, Screen& screen)
+bool Sprite::Load(const std::string& filename)
 {
 	SDL_Surface* rawImageData = IMG_Load(filename.c_str());
 
@@ -47,7 +47,7 @@ bool Sprite::Load(const std::string& filename, Screen& screen)
 		return false;
 	}
 
-	m_image = SDL_CreateTextureFromSurface(screen.GetRenderer(), rawImageData);
+	m_image = SDL_CreateTextureFromSurface(Screen::Instance()->GetRenderer(), rawImageData);
 
 	return true;
 }
@@ -73,7 +73,7 @@ void Sprite::Update()
 	}
 }
 
-void Sprite::Render(int xPos, int yPos, double angle, Screen& screen, Flip flip)
+void Sprite::Render(int xPos, int yPos, double angle, Flip flip)
 {
 	if (!m_isAnimationDone)
 	{
@@ -92,6 +92,6 @@ void Sprite::Render(int xPos, int yPos, double angle, Screen& screen, Flip flip)
 
 		SDL_Point centre{ m_spriteDimension.x * 0.5f, m_spriteDimension.y * 0.5f };
 
-		SDL_RenderCopyEx(screen.GetRenderer(), m_image, &sourceRect, &targetRect, angle, &centre, static_cast<SDL_RendererFlip>(flip));
+		SDL_RenderCopyEx(Screen::Instance()->GetRenderer(), m_image, &sourceRect, &targetRect, angle, &centre, static_cast<SDL_RendererFlip>(flip));
 	}
 }

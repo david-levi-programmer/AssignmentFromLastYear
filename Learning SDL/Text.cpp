@@ -69,7 +69,7 @@ void Text::UnLoad()
 	TTF_CloseFont(m_font);
 }
 
-void Text::Render(int xPos, int yPos, Screen& screen)
+void Text::Render(int xPos, int yPos)
 {
 	SDL_Rect targetRect;
 	
@@ -84,12 +84,12 @@ void Text::Render(int xPos, int yPos, Screen& screen)
 	
 		SDL_Surface* textData = TTF_RenderText_Blended(m_font, m_text.c_str(), m_color);
 	
-		m_texture = SDL_CreateTextureFromSurface(screen.GetRenderer(), textData);
+		m_texture = SDL_CreateTextureFromSurface(Screen::Instance()->GetRenderer(), textData);
 		
 		SDL_FreeSurface(textData);
 	
 		m_isDirty = false;
 	}
 	
-	SDL_RenderCopy(screen.GetRenderer(), m_texture, nullptr, &targetRect);
+	SDL_RenderCopy(Screen::Instance()->GetRenderer(), m_texture, nullptr, &targetRect);
 }

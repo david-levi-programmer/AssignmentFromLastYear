@@ -22,7 +22,7 @@ public:
 
 	bool Load(const std::string& filename, int fontSize);
 	void UnLoad();
-	void Render(int xPos, int yPos, Screen& screen);
+	void Render(int xPos, int yPos);
 
 private:
 

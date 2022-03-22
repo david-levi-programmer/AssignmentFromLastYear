@@ -14,7 +14,7 @@ void GameObject::SetTag(const std::string& tag)
 	m_tag = tag;
 }
 
-void GameObject::Update(const Input& input)
+void GameObject::Update()
 {
 
 }

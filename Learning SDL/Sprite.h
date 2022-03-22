@@ -27,11 +27,11 @@ public:
 	void SetSpriteDimension(int width, int height);
 	void SetImageDimension(int columns, int rows, int width, int height);
 
-	bool Load(const std::string& filename, Screen& screen);
+	bool Load(const std::string& filename);
 	void Unload();
 
 	void Update();
-	void Render(int xPos, int yPos, double angle, Screen& screen, Flip flip = NO_FLIP);
+	void Render(int xPos, int yPos, double angle, Flip flip = NO_FLIP);
 
 private:
 

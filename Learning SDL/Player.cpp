@@ -1,9 +1,10 @@
 #include "Player.h"
 #include "Input.h"
+#include "Screen.h"
 
-Player::Player(Screen& screen)
+Player::Player()
 {
-	m_image[IDLE].Load("Assets/Images/protag.png", screen); //downloaded for free from OpenGameArt.org
+	m_image[IDLE].Load("Assets/Images/protag.png"); //downloaded for free from OpenGameArt.org
 	for (int i = 0; i < TOTAL_STATES; i++)
 	{
 		m_image[i].SetSpriteDimension(400, 24);
@@ -51,40 +52,40 @@ const BoxCollide& Player::GetCollider() const
 	return m_collide;
 }*/
 
-void Player::Render(Screen& screen)
+void Player::Render()
 {
 	if (m_isVisible)
 	{
 		if (m_facingDirection == RIGHT)
 		{
-			m_image[m_state].Render(m_position.x, m_position.y, m_angle, screen, Sprite::NO_FLIP);
+			m_image[m_state].Render(m_position.x, m_position.y, m_angle, Sprite::NO_FLIP);
 		}
 
 		else
 		{
-			m_image[m_state].Render(m_position.x, m_position.y, m_angle, screen, Sprite::HORZ_FLIP);
+			m_image[m_state].Render(m_position.x, m_position.y, m_angle, Sprite::HORZ_FLIP);
 		}
 	}
 }
 
-void Player::Update(Input& input)
+void Player::Update()
 {
 	//==========================Key Inputs============================
-	if (input.GetKeyDown() == SDL_SCANCODE_LEFT)
+	if (Input::Instance()->GetKeyDown() == SDL_SCANCODE_LEFT)
 	{
 		m_state = RUN;
 		m_facingDirection = LEFT;
 		m_footstep.Play();
 	}
 
-	else if (input.GetKeyDown() == SDL_SCANCODE_RIGHT)
+	else if (Input::Instance()->GetKeyDown() == SDL_SCANCODE_RIGHT)
 	{
 		m_state = RUN;
 		m_facingDirection = RIGHT;
 		m_footstep.Play();
 	}
 
-	else if (input.GetKeyDown() == SDLK_SPACE)
+	else if (Input::Instance()->GetKeyDown() == SDLK_SPACE)
 	{
 		m_state = JUMP;
 		m_jumpDirection = UP;

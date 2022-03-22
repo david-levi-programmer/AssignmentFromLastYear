@@ -20,6 +20,7 @@ class PlayState : public State
 
 public:
 
+	PlayState() {}
 	~PlayState() override {}
 
 	bool OnEnter() override;
@@ -31,6 +32,9 @@ private:
 
 	bool IsGameRunning = true;
 	Sprite background;
-	Score* score = new Score;
+	Score score;
+	Block stone;
+	Player player;
+
 
 };

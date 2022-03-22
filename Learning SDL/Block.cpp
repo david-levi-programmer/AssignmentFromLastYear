@@ -1,8 +1,8 @@
 #include "Block.h"
 
-Block::Block(Screen& screen)
+Block::Block()
 {
-	m_image.Load("Assets/Images/Objects.png", screen);
+	m_image.Load("Assets/Images/Objects.png");
 	m_image.SetSpriteDimension(100, 100);
 	m_image.SetImageDimension(2, 2, 600, 318);
 	m_image.SetImageCel(2, 2);
@@ -28,7 +28,7 @@ const BoxCollide& Block::GetCollider() const
 	return m_collider;
 }*/
 
-void Block::Update(Input& input)
+void Block::Update()
 {
 	m_collider.SetPosition(m_position.x, m_position.y);
 	m_collider.SetDimension(m_size.x, m_size.y);
@@ -37,7 +37,7 @@ void Block::Update(Input& input)
 	m_collider.SetPosition(m_position.x, m_position.y);*/
 }
 
-void Block::Render(Screen& screen)
+void Block::Render()
 {
-	m_image.Render(m_position.x, m_position.y, m_angle, screen);
+	m_image.Render(m_position.x, m_position.y, m_angle);
 }

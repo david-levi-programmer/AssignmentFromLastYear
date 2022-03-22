@@ -16,8 +16,8 @@ public:
 	const std::string& GetTag() const;
 	void SetTag(const std::string& tag);
 
-	virtual void Render(Screen& screen) = 0;
-	virtual void Update(const Input& input);
+	virtual void Render() = 0;
+	virtual void Update();
 
 	void SetPosition(int x, int y);
 	void SetPosition(const Vector2D& position);

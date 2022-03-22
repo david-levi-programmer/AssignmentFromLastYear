@@ -12,7 +12,8 @@ class Input
 
 public:
 
-	Input();
+	static Input* Instance();
+
 	void Update();
 
 	char GetKeyUp();
@@ -28,6 +29,10 @@ public:
 	const MousePos& GetMousePosition();
 
 private:
+
+	Input() {}
+	Input(const Input&) {}
+	Input& operator=(const Input&) {}
 
 	char m_keyUp;
 	char m_keyDown;

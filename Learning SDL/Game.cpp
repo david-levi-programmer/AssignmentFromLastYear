@@ -5,8 +5,6 @@
 #include "Text.h"
 #include "Sprite.h"
 
-Screen Game::m_screen;
-
 Game::Game(State* initialState)
 {
     m_gameState.reset(initialState);
@@ -14,12 +12,7 @@ Game::Game(State* initialState)
 
 bool Game::Initialize()
 {
-	Music music;
-	Text font;
-	Screen screen;
-	Sprite background;
-
-    if (!m_screen.Initilize("My game", 1280, 720))
+    if (!Screen::Instance()->Initilize("My game", 1280, 720))
     {
         return 0;
     }
@@ -33,15 +26,14 @@ bool Game::Run()
 
     while (m_gameState)
     {
-		//screen.Clear();
-
-		Input input;
-
-		input.Update();
+		Screen::Instance()->Clear();
+		Input::Instance()->Update();
 		
 		State* nextState = m_gameState->Update();
 
         m_gameState->Render();
+
+		Screen::Instance()->Present();
 
         if (nextState != m_gameState.get())
         {
@@ -62,5 +54,5 @@ void Game::Shutdown()
 {
 	Music::Shutdown();
 	Text::Shutdown();
-	//screen.Shutdown();
+	Screen::Instance()->Shutdown();
 }

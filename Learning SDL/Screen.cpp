@@ -2,7 +2,11 @@
 #include <string>
 #include "Screen.h"
 
-Screen::Screen() {}
+Screen* Screen::Instance()
+{
+	static Screen* screen = new Screen;
+	return screen;
+}
 
 bool Screen::Initilize(const std::string & windowTitle, int width, int height)
 {
