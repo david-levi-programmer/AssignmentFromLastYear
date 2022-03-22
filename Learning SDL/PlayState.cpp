@@ -43,7 +43,6 @@ State* PlayState::Update()
 		return nullptr;
 	}
 
-
 	//======================Code for debugging================
 
 	/*if (input.GetKeyDown() == SDLK_LEFT)
@@ -88,7 +87,7 @@ State* PlayState::Update()
 	stone.Update();
 
 	//===========Collision=================================
-	//BoxCollide playerCollider = player.GetCollider();
+	BoxCollide playerCollider = player.GetCollider();
 	//BoxCollide stoneCollider = stone.GetCollider();
 
 	/*if (playerCollider.IsColliding(stoneCollider))
@@ -122,12 +121,12 @@ bool PlayState::Render()
 {
 	background.Render(0, 0, 0.0);
 
-	//player.Render();
+	player.Render();
 
-	/*if (player.isVisible())
+	if (player.isVisible())
 	{
 		player.Render();
-	}*/
+	}
 
 	//stone.Render();
 
