@@ -34,6 +34,7 @@ private:
 	Sprite background;
 	Score score;
 	Block stone;
+	Music music;
 	Player player;
 
 

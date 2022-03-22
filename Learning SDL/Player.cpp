@@ -7,8 +7,8 @@ Player::Player()
 	m_image[IDLE].Load("Assets/Images/protag.png"); //downloaded for free from OpenGameArt.org
 	for (int i = 0; i < TOTAL_STATES; i++)
 	{
-		m_image[i].SetSpriteDimension(400, 24);
-		m_image[i].SetImageDimension(22, 1, 400, 24);
+		m_image[i].SetSpriteDimension(5880, 600);
+		m_image[i].SetImageDimension(10, 1, 5880, 600);
 
 		m_image[i].IsAnimated(true);
 		m_image[i].SetAnimationSpeed(3.5f);

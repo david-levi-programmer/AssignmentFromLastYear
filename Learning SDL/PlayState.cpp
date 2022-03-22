@@ -23,7 +23,6 @@ bool PlayState::OnEnter()
 	stone.SetSize(50, 50);
 	stone.SetSpeed(0);*/
 
-	Music music;
 	music.Load("Assets/Audio/Music/bensound-clearday.mp3"); // Composed by Bensound and downloaded from his website
 	music.Play(Music::PlayLoop::PLAY_ENDLESS);
 
@@ -123,16 +122,16 @@ bool PlayState::Render()
 {
 	background.Render(0, 0, 0.0);
 
-	//player.Render(screen);
+	//player.Render();
 
 	/*if (player.isVisible())
 	{
-		player.Render(screen);
+		player.Render();
 	}*/
 
-	//stone.Render(screen);
+	//stone.Render();
 
-	//score->Render(screen);
+	//score->Render();
 
 	return true;
 }
