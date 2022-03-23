@@ -45,17 +45,17 @@ State* PlayState::Update()
 
 	//======================Code for debugging================
 
-	/*if (input.GetKeyDown() == SDLK_LEFT)
+	/*if (Input::Instance()->GetKeyDown() == SDLK_LEFT)
 	{
 		std::cout << "Left key pressed. Move player left." << std::endl;
 	}
 
-	if (input.GetKeyDown() == SDLK_RIGHT)
+	if (Input::Instance()->GetKeyDown() == SDLK_RIGHT)
 	{
 		std::cout << "Right key pressed. Move player right." << std::endl;
 	}
 
-	if (input.KeyPress())
+	if (Input::Instance()->KeyPress())
 	{
 		std::cout << input.GetKeyDown() << std::endl;
 	}
@@ -130,7 +130,7 @@ bool PlayState::Render()
 
 	//stone.Render();
 
-	//score->Render();
+	score.Render();
 
 	return true;
 }

@@ -12,7 +12,7 @@ Game::Game(State* initialState)
 
 bool Game::Initialize()
 {
-    if (!Screen::Instance()->Initilize("My game", 1280, 720))
+    if (!Screen::Instance()->Initilize("The 3rd Second", 1280, 720))
     {
         return 0;
     }

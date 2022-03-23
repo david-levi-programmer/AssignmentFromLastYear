@@ -8,7 +8,7 @@ public:
 
 	static Screen* Instance();
 
-	bool Initilize(const std::string& windowTitle = "Assignment 3", int width = 1280, int height = 720);
+	bool Initilize(const std::string& windowTitle = "CU5011 Assignment 2", int width = 1280, int height = 720);
 	void Clear();
 	void Present();
 	void Shutdown();

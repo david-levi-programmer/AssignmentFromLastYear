@@ -25,7 +25,7 @@ const BoxCollide& Block::GetCollider() const
 
 /*const SphereCollide& Block::GetCollider() const
 {
-	return m_collider;
+	return m_collide;
 }*/
 
 void Block::Update()
@@ -33,8 +33,8 @@ void Block::Update()
 	m_collider.SetPosition(m_position.x, m_position.y);
 	m_collider.SetDimension(m_size.x, m_size.y);
 	m_collider.Update();
-	/*m_collider.SetRadius(m_size.x / 2);
-	m_collider.SetPosition(m_position.x, m_position.y);*/
+	/*m_collide.SetRadius(m_size.x / 2);
+	m_collide.SetPosition(m_position.x, m_position.y);*/
 }
 
 void Block::Render()

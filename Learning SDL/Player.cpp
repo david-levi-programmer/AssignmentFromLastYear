@@ -4,7 +4,7 @@
 
 Player::Player()
 {
-	m_image[IDLE].Load("Assets/Images/protag.png"); //downloaded for free from OpenGameArt.org
+	m_image[IDLE].Load("Assets/Images/Adventure_boy_idle.png"); //downloaded for free from OpenGameArt.org
 	for (int i = 0; i < TOTAL_STATES; i++)
 	{
 		m_image[i].SetSpriteDimension(5880, 600);
