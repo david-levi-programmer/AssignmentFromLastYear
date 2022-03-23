@@ -36,6 +36,7 @@ private:
 	Block stone;
 	Music music;
 	Player player;
+	Text font;
 
 
 };

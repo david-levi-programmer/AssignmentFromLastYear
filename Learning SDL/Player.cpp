@@ -1,5 +1,4 @@
 #include "Player.h"
-#include "Input.h"
 #include "Screen.h"
 
 Player::Player()
