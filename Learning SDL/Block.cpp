@@ -2,10 +2,10 @@
 
 Block::Block()
 {
-	m_image.Load("Assets/Images/Objects.png");
+	m_image.Load("Assets/Images/obj_stoneblock001.png");
 	m_image.SetSpriteDimension(100, 100);
-	m_image.SetImageDimension(2, 2, 600, 318);
-	m_image.SetImageCel(2, 2);
+	m_image.SetImageDimension(1, 1, 96, 96);
+	//m_image.SetImageCel(2, 2);
 }
 
 Block::~Block()
