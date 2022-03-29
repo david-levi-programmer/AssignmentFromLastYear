@@ -17,7 +17,7 @@ public:
 	void SetTag(const std::string& tag);
 
 	virtual void Render() = 0;
-	virtual void Update();
+	virtual void Update() = 0;
 
 	void SetPosition(int x, int y);
 	void SetPosition(const Vector2D& position);

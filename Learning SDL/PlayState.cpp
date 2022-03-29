@@ -26,7 +26,7 @@ bool PlayState::OnEnter()
 	music.Load("Assets/Audio/Music/bensound-clearday.mp3"); // Composed by Bensound and downloaded from his website
 	music.Play(Music::PlayLoop::PLAY_ENDLESS);
 
-	font.Load("Assets/Fonts/home-away.regular.otf", 12);
+	font.Load("Assets/Images/home-away.regular.otf", 12);
 	font.Render(50, 450);
 	score.SetScore(100);
 
@@ -123,7 +123,7 @@ bool PlayState::Render()
 {
 	background.Render(0, 0, 0.0);
 
-	player.Render();
+	//player.Render();
 
 	if (player.isVisible())
 	{

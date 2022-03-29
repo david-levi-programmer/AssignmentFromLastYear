@@ -14,11 +14,6 @@ void GameObject::SetTag(const std::string& tag)
 	m_tag = tag;
 }
 
-void GameObject::Update()
-{
-
-}
-
 void GameObject::SetPosition(int x, int y)
 {
 	m_position = { x, y };

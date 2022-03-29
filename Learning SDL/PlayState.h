@@ -13,6 +13,7 @@
 #include "Text.h"
 #include "Score.h"
 #include "BoxCollide.h"
+#include "Sound.h"
 #include <string>
 
 class PlayState : public State
