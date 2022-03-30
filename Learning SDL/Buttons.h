@@ -2,11 +2,19 @@
 #include "GameObject.h"
 #include "Sprite.h"
 #include "Music.h"
+#include "Sound.h"
 
 class Buttons : public GameObject
 {
 
 public:
+
+	enum class ButtonState
+	{
+		Clicked,
+		Hovered,
+		Default
+	};
 
 	Buttons();
 

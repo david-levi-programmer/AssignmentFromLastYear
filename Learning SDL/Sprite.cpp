@@ -77,7 +77,7 @@ void Sprite::Update()
 	if (m_isAnimated)
 	{
 		static float total = 0.0f;
-		total += 0.1;
+		total += 0.1f;
 
 		m_imageCel = static_cast<int>(total *= m_animationSpeed) % (m_imageDimension.x * m_imageDimension.y);
 	

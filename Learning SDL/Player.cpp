@@ -2,7 +2,7 @@
 
 Player::Player()
 {
-	m_image[static_cast<unsigned int>(Player::State::Idle)].Load("../Assets/Images/protag.png"); //downloaded for free from OpenGameArt.org
+	m_image[static_cast<unsigned int>(Player::State::Idle)].Load("Assets/Images/protag.png"); //downloaded for free from OpenGameArt.org
 	for (int i = 0; i < static_cast<unsigned int>(Player::State::Total_States); i++)
 	{
 		m_image[i].SetSpriteDimension(100, 100);

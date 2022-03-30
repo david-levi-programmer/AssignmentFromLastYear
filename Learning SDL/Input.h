@@ -40,6 +40,6 @@ private:
 	int m_mouseButtonUp = 1;
 	int m_mouseButtonDown = 0;
 
-	MousePos m_mousePosition;
+	MousePos m_mousePosition{ 0 , 0 };
 
 };

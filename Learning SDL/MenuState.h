@@ -21,4 +21,7 @@ public:
 	bool Render() override;
 	void OnExit() override;
 
+private:
+
+
 };

@@ -41,7 +41,7 @@ private:
 	bool m_isAnimationDone;
 	bool m_isLooping;
 
-	Flip m_imageFlip;
+	Flip m_imageFlip{ Flip::NO_FLIP };
 	SDL_Texture* m_image;
 	SDL_Point m_celDimension;
 	SDL_Point m_imageDimension;
