@@ -1,20 +1,16 @@
 #pragma once
+#include <string>
 
 #include "Game.h"
-#include "Sprite.h"
-#include "State.h"
-#include "Screen.h"
 #include "Input.h"
-#include "Main.h"
-#include "Player.h"
-#include "Vector2D.h"
 #include "Block.h"
 #include "Music.h"
-#include "Text.h"
-#include "Score.h"
-#include "BoxCollide.h"
+#include "Player.h"
+#include "State.h"
 #include "Sound.h"
-#include <string>
+#include "Score.h"
+#include "Text.h"
+#include "Vector2D.h"
 
 class PlayState : public State
 {

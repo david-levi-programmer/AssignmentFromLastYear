@@ -1,9 +1,8 @@
 #include "Player.h"
-#include "Screen.h"
 
 Player::Player()
 {
-	m_image[IDLE].Load("Assets/Images/protag.png"); //downloaded for free from OpenGameArt.org
+	m_image[IDLE].Load("../Assets/Images/protag.png"); //downloaded for free from OpenGameArt.org
 	for (int i = 0; i < TOTAL_STATES; i++)
 	{
 		m_image[i].SetSpriteDimension(100, 100);

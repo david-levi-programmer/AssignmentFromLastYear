@@ -1,6 +1,21 @@
 #include <iostream>
-#include "Sprite.h"
 #include <SDL_image.h>
+
+#include "Sprite.h"
+
+Sprite::Sprite() 
+{
+	m_image = nullptr;
+	m_animationSpeed = 0.0f;
+
+	m_isAnimated = false;
+	m_isAnimationDone = false;
+	m_isLooping = false;
+
+	m_celDimension = { 0, 0 };
+	m_imageDimension = { 0, 0 };
+	m_spriteDimension = { 0, 0 };
+}
 
 void Sprite::IsAnimated(bool flag)
 {

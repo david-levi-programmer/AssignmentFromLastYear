@@ -11,7 +11,6 @@ public:
 
 	static bool Initialize();
 	static void Shutdown();
-
 	Text();
 	~Text() {}
 
@@ -21,18 +20,16 @@ public:
 	void SetDimension(int width, int height);
 
 	bool Load(const std::string& filename, int fontSize);
-	void UnLoad();
 	void Render(int xPos, int yPos);
+	void Unload();
 
 private:
 
-	bool m_isDirty = true;
-
+	bool m_isDirty;
 	std::string m_text;
 
-	TTF_Font* m_font = nullptr;
-	SDL_Color m_color = { 255, 255, 255, 255 };
-	SDL_Point m_dimension = { 10, 10 };
+	TTF_Font* m_font;
+	SDL_Color m_color;
+	SDL_Point m_dimension;
 	SDL_Texture* m_texture;
-
 };

@@ -9,6 +9,7 @@
 #include "Text.h"
 #include "Music.h"
 #include "Sound.h"
+#include "Buttons.h"
 #include <string>
 
 class MenuState : public State

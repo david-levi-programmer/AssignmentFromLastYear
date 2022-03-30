@@ -1,17 +1,9 @@
 #include "Game.h"
-#include "Input.h"
-#include "Main.h"
-#include "Music.h"
-#include "Text.h"
-#include "Sprite.h"
-
-Game::Game(State* initialState)
-{
-    m_gameState.reset(initialState);
-}
 
 bool Game::Initialize()
 {
+    Screen::Instance();
+
     if (!Screen::Instance()->Initilize("The 3rd Second", 1280, 720))
     {
         return 0;
@@ -20,8 +12,9 @@ bool Game::Initialize()
     return true;
 }
 
-bool Game::Run()
+bool Game::Run(State* initialState)
 {
+    m_gameState.reset(initialState);
     m_gameState->OnEnter();
 
     while (m_gameState)
@@ -33,8 +26,6 @@ bool Game::Run()
 
         m_gameState->Render();
 
-		Screen::Instance()->Present();
-
         if (nextState != m_gameState.get())
         {
             m_gameState->OnExit();
@@ -45,6 +36,7 @@ bool Game::Run()
                 m_gameState->OnEnter();
             }
         }
+		Screen::Instance()->Present();
     }
     
     return true;

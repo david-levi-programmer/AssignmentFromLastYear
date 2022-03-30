@@ -2,6 +2,7 @@
 
 #include <string>
 #include <SDL.h>
+
 #include "Screen.h"
 
 class Sprite
@@ -16,7 +17,7 @@ public:
 		VERT_FLIP = SDL_FLIP_VERTICAL
 	};
 
-	Sprite() {}
+	Sprite();
 	~Sprite() {}
 
 	void IsAnimated(bool flag);
@@ -35,17 +36,17 @@ public:
 
 private:
 
-	int m_imageCel;
+	int m_imageCel{ 0 };
 	float m_animationSpeed = 0.0f;
 
-	bool m_isAnimated = false;
-	bool m_isAnimationDone = false;
-	bool m_isLooping = false;
+	bool m_isAnimated;
+	bool m_isAnimationDone;
+	bool m_isLooping;
 
 	Flip m_imageFlip;
-	SDL_Texture* m_image = nullptr;
-	SDL_Point m_celDimension = { 0, 0 };
-	SDL_Point m_imageDimension = { 0, 0 };
-	SDL_Point m_spriteDimension = { 0, 0 };
+	SDL_Texture* m_image;
+	SDL_Point m_celDimension ;
+	SDL_Point m_imageDimension ;
+	SDL_Point m_spriteDimension;
 
 };

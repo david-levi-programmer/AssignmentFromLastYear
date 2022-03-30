@@ -1,11 +1,7 @@
-#include "PlayState.h"
 #include <iostream>
 #include <string>
-#include "Score.h"
-#include "BoxCollide.h"
-#include "Player.h"
-#include "Vector2D.h"
-#include "Block.h"
+
+#include "PlayState.h"
 
 bool PlayState::OnEnter()
 {
@@ -123,7 +119,7 @@ bool PlayState::Render()
 {
 	background.Render(0, 0, 0.0);
 
-	//player.Render();
+	player.Render();
 
 	if (player.isVisible())
 	{
