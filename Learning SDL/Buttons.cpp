@@ -1,9 +1,10 @@
 #include "Buttons.h"
 
-Buttons::Buttons()
+Buttons::Buttons(const std::string& filename)
 {
-	m_image.Load("../Assets/Images/Buttons/Highlighted/Play.png");
-	m_image.SetImageDimension(1, 1, 716, 160);
+	SetTag(filename);
+	/*m_image.Load("../Assets/Images/Buttons/Highlighted/Play.png");
+	m_image.SetImageDimension(1, 1, 716, 160);*/
 }
 
 void Buttons::Update()
