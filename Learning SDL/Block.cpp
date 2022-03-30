@@ -3,7 +3,7 @@
 Block::Block()
 {
 	m_image.Load("Assets/Images/stone.png");
-	m_image.SetSpriteDimension(1280, 720);
+	m_image.SetSpriteDimension(100, 100);
 	m_image.SetImageDimension(1, 1, 96, 96);
 	//m_image.SetImageCel(2, 2);
 }

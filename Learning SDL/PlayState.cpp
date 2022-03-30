@@ -6,20 +6,20 @@ bool PlayState::OnEnter()
 	m_background.SetSpriteDimension(1280, 720);
 	m_background.SetImageDimension(1, 1, 500, 500);
 
-	m_player.SetPosition(50, 450);
+	m_player.SetPosition(700, 450);
 	m_player.SetAngle(0.0);
 	m_player.SetSize(100, 100);
 	m_player.SetSpeed(5);
 
-	m_stone.SetPosition(1000, 500);
+	m_stone.SetPosition(700, 500);
 	m_stone.SetAngle(0.0);
-	m_stone.SetSize(50, 50);
+	m_stone.SetSize(10, 10);
 	m_stone.SetSpeed(0);
 
 	m_music.Load("Assets/Audio/Music/bensound-clearday.mp3"); // Composed by Bensound and downloaded from his website
 	m_music.Play(Music::PlayLoop::PLAY_ENDLESS);
 
-	m_font.Load("Assets/Images/home-away.regular.otf", 12);
+	//m_font.Load("nevis.ttf", 12);
 	m_font.Render(50, 450);
 	m_score.SetScore(100);
 
