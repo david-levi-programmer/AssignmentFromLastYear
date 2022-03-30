@@ -15,7 +15,6 @@ class Game
 
 public:
 
-	//Game(State* initialState);
 	bool Initialize();
 	bool Run(State* initialState);
 	void Shutdown();

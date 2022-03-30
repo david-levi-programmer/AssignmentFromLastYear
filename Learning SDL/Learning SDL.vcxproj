@@ -176,7 +176,6 @@
     <ClInclude Include="PlayState.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="Input.h" />
-    <ClInclude Include="Main.h" />
     <ClInclude Include="Music.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Score.h" />

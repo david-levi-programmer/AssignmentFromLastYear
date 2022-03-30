@@ -14,9 +14,6 @@ class PlayState : public State
 
 public:
 
-	PlayState() {}
-	~PlayState() override {}
-
 	bool OnEnter() override;
 	State* Update() override;
 	bool Render() override;

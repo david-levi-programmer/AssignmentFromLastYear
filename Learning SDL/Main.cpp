@@ -1,6 +1,3 @@
-#include <memory>
-#include <iostream>
-#include <string>
 #include <SDL.h>
 #include "Game.h"
 #include "PlayState.h"

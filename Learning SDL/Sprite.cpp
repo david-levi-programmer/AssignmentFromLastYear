@@ -88,7 +88,7 @@ void Sprite::Update()
 	}
 }
 
-void Sprite::Render(int xPos, int yPos, double angle, Flip flip)
+void Sprite::Render(int xPos, int yPos, double angle, Sprite::Flip flip)
 {
 	if (!m_isAnimationDone)
 	{

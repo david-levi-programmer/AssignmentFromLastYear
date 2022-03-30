@@ -116,9 +116,6 @@
     <ClInclude Include="Block.h">
       <Filter>Header Files\GameObjects</Filter>
     </ClInclude>
-    <ClInclude Include="Main.h">
-      <Filter>Header Files\Main</Filter>
-    </ClInclude>
     <ClInclude Include="Music.h">
       <Filter>Header Files\Components</Filter>
     </ClInclude>

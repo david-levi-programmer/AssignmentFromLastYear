@@ -1,8 +1,6 @@
 #pragma once
 
-#include <string>
 #include <SDL.h>
-
 #include "Screen.h"
 
 class Sprite
@@ -32,7 +30,7 @@ public:
 	void Unload();
 
 	void Update();
-	void Render(int xPos, int yPos, double angle, Flip flip = Sprite::Flip::NO_FLIP);
+	void Render(int xPos, int yPos, double angle, Sprite::Flip flip = Sprite::Flip::NO_FLIP);
 
 private:
 
@@ -45,8 +43,8 @@ private:
 
 	Flip m_imageFlip;
 	SDL_Texture* m_image;
-	SDL_Point m_celDimension ;
-	SDL_Point m_imageDimension ;
+	SDL_Point m_celDimension;
+	SDL_Point m_imageDimension;
 	SDL_Point m_spriteDimension;
 
 };

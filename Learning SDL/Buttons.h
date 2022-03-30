@@ -1,6 +1,4 @@
 #pragma once
-
-#include "Game.h"
 #include "GameObject.h"
 #include "Sprite.h"
 #include "Music.h"
