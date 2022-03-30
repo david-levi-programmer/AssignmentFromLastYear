@@ -13,25 +13,25 @@ class Player : public GameObject //inheritance - player is a game object
 
 public:
 
-	enum State
+	enum class State
 	{
-		IDLE,
-		RUN,
-		JUMP,
-		TOTAL_STATES
+		Idle,
+		Run,
+		Jump,
+		Total_States
 	};
 
-	enum Direction
+	enum class Direction
 	{
-		LEFT,
-		RIGHT
+		Left,
+		Right
 	};
 
-	enum Jump
+	enum class Jump
 	{
-		UP,
-		DOWN,
-		NONE
+		Up,
+		Down,
+		None
 	};
 
 	Player();
@@ -47,13 +47,13 @@ public:
 private:
 
 	Vector2D m_direction;
-	Direction m_facingDirection = RIGHT;
+	Direction m_facingDirection = Player::Direction::Right;
 	int m_speed = 0;
-	Jump m_jumpDirection = NONE;
+	Jump m_jumpDirection = Player::Jump::None;
 
-	Sprite m_image[TOTAL_STATES]; 
+	Sprite m_image[static_cast<unsigned int>(Player::State::Total_States)]; 
 	Sound m_footstep;
-	State m_state = IDLE;
+	State m_state = Player::State::Idle;
 
 	BoxCollide m_collider;
 	//SphereCollide m_collide;

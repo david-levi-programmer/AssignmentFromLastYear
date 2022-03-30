@@ -10,7 +10,7 @@ class Sprite
 
 public:
 
-	enum Flip
+	enum class Flip
 	{
 		NO_FLIP = SDL_FLIP_NONE,
 		HORZ_FLIP = SDL_FLIP_HORIZONTAL,
@@ -32,7 +32,7 @@ public:
 	void Unload();
 
 	void Update();
-	void Render(int xPos, int yPos, double angle, Flip flip = NO_FLIP);
+	void Render(int xPos, int yPos, double angle, Flip flip = Sprite::Flip::NO_FLIP);
 
 private:
 

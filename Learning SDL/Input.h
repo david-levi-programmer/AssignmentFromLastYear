@@ -30,19 +30,15 @@ public:
 
 private:
 
-	Input() {}
-	Input(const Input&) {}
-	Input& operator=(const Input&) {}
-
-	char m_keyUp;
-	char m_keyDown;
+	char m_keyUp = 1;
+	char m_keyDown = 0;
 
 	bool m_KeyPress = false;
 	bool m_MouseClick = false;
 	bool m_ClosedWindow = false;
 
-	int m_mouseButtonUp;
-	int m_mouseButtonDown;
+	int m_mouseButtonUp = 1;
+	int m_mouseButtonDown = 0;
 
 	MousePos m_mousePosition;
 

@@ -46,7 +46,6 @@ const MousePos& Input::GetMousePosition()
     return m_mousePosition;
 }
 
-
 void Input::Update()
 {
     SDL_Event events;

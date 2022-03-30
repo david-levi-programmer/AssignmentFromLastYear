@@ -1,16 +1,13 @@
 #pragma once
-#include <string>
-
-#include "Game.h"
-#include "Input.h"
+#include "Sprite.h"
 #include "Block.h"
 #include "Music.h"
 #include "Player.h"
 #include "State.h"
-#include "Sound.h"
+//#include "Sound.h"
 #include "Score.h"
 #include "Text.h"
-#include "Vector2D.h"
+#include "BoxCollide.h"
 
 class PlayState : public State
 {
@@ -27,13 +24,13 @@ public:
 
 private:
 
-	bool IsGameRunning = true;
-	Sprite background;
-	Score score;
-	Block stone;
-	Music music;
-	Player player;
-	Text font;
-
+	bool m_IsGameRunning = true;
+	Sprite m_background;
+	Score m_score;
+	Block m_stone;
+	Music m_music;
+	Player m_player;
+	Text m_font;
+	BoxCollide m_playerCollider;
 
 };

@@ -1,30 +1,27 @@
-#include <iostream>
-#include <string>
-
 #include "PlayState.h"
 
 bool PlayState::OnEnter()
 {
-	background.Load("Assets/Images/Shapes.jpg"); //Found on Google Images, searching for royalty-free images
-	background.SetSpriteDimension(1280, 720);
-	background.SetImageDimension(1, 1, 500, 500);
+	m_background.Load("Assets/Images/Shapes.jpg"); //Found on Google Images, searching for royalty-free images
+	m_background.SetSpriteDimension(1280, 720);
+	m_background.SetImageDimension(1, 1, 500, 500);
 
-	player.SetPosition(50, 450);
-	player.SetAngle(0.0);
-	player.SetSize(100, 100);
-	player.SetSpeed(5);
+	m_player.SetPosition(50, 450);
+	m_player.SetAngle(0.0);
+	m_player.SetSize(100, 100);
+	m_player.SetSpeed(5);
 
-	stone.SetPosition(1000, 500);
-	stone.SetAngle(0.0);
-	stone.SetSize(50, 50);
-	stone.SetSpeed(0);
+	m_stone.SetPosition(1000, 500);
+	m_stone.SetAngle(0.0);
+	m_stone.SetSize(50, 50);
+	m_stone.SetSpeed(0);
 
-	music.Load("Assets/Audio/Music/bensound-clearday.mp3"); // Composed by Bensound and downloaded from his website
-	music.Play(Music::PlayLoop::PLAY_ENDLESS);
+	m_music.Load("Assets/Audio/Music/bensound-clearday.mp3"); // Composed by Bensound and downloaded from his website
+	m_music.Play(Music::PlayLoop::PLAY_ENDLESS);
 
-	font.Load("Assets/Images/home-away.regular.otf", 12);
-	font.Render(50, 450);
-	score.SetScore(100);
+	m_font.Load("Assets/Images/home-away.regular.otf", 12);
+	m_font.Render(50, 450);
+	m_score.SetScore(100);
 
 	return true;
 }
@@ -78,14 +75,14 @@ State* PlayState::Update()
 
 	//=======================Player State==================
 
-	player.Update();
+	m_player.Update();
 
 	//=====================================================
 
-	stone.Update();
+	m_stone.Update();
 
 	//===========Collision=================================
-	BoxCollide playerCollider = player.GetCollider();
+	m_playerCollider = m_player.GetCollider();
 	//BoxCollide stoneCollider = stone.GetCollider();
 
 	/*if (playerCollider.IsColliding(stoneCollider))
@@ -117,18 +114,18 @@ State* PlayState::Update()
 
 bool PlayState::Render()
 {
-	background.Render(0, 0, 0.0);
+	m_background.Render(0, 0, 0.0);
 
-	player.Render();
+	m_player.Render();
 
-	if (player.isVisible())
+	if (m_player.isVisible())
 	{
-		player.Render();
+		m_player.Render();
 	}
 
-	stone.Render();
+	m_stone.Render();
 
-	score.Render();
+	m_score.Render();
 
 	return true;
 }
@@ -137,5 +134,5 @@ void PlayState::OnExit()
 {
 	Music::Shutdown();
 	Text::Shutdown();
-	background.Unload();
+	m_background.Unload();
 }
