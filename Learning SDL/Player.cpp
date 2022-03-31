@@ -2,6 +2,8 @@
 
 Player::Player()
 {
+	//auto setSprite = [&m_image](static_cast<unsigned int>(Player::State::Total_States), const std::string& filename){}
+	
 	m_image[static_cast<unsigned int>(Player::State::Idle)].Load("Assets/Images/protag_idle.png"); //cropped from a sprite downloaded for free from OpenGameArt.org
 	m_image[static_cast<unsigned int>(Player::State::Run)].Load("Assets/Images/protag_run.png");
 	m_image[static_cast<unsigned int>(Player::State::Jump)].Load("Assets/Images/protag_jump.png");
@@ -15,6 +17,7 @@ Player::Player()
 	m_image[static_cast<unsigned int>(Player::State::Jump)].SetSpriteDimension(100, 100);
 	m_image[static_cast<unsigned int>(Player::State::Jump)].SetImageDimension(8, 1, 158, 24);
 
+
 	for (int i = 0; i < static_cast<unsigned int>(Player::State::Total_States); i++)
 	{
 		/*m_image[i].SetSpriteDimension(100, 100);
@@ -22,19 +25,19 @@ Player::Player()
 
 		m_image[i].IsAnimated(true);
 		m_image[i].SetAnimationSpeed(1.0f);
+		m_image[i].IsLooping(true);
 
-		if (i == static_cast<unsigned int>(Player::State::Jump))
-		{
-			/*m_image[i].Load("Assets/Images/protag_jump.png");
-			m_image[i].SetSpriteDimension(100, 100);
-			m_image[i].SetImageDimension(8, 1, 158, 24);*/
-			m_image[i].IsLooping(false);
-		}
-		
-		else
-		{
-			m_image[i].IsLooping(true);
-		}
+		//if (i == static_cast<unsigned int>(Player::State::Jump))
+		//{
+		//	/*m_image[i].Load("Assets/Images/protag_jump.png");
+		//	m_image[i].SetSpriteDimension(100, 100);
+		//	m_image[i].SetImageDimension(8, 1, 158, 24);*/
+		//}
+		//
+		//else
+		//{
+		//	m_image[i].IsLooping(true);
+		//}
 	}
 
 	m_footstep.Load("Assets/Audio/Sounds/Footsteps.wav");
