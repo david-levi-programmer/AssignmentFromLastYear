@@ -6,7 +6,7 @@ bool PlayState::OnEnter()
 	m_background.SetSpriteDimension(1280, 720);
 	m_background.SetImageDimension(1, 1, 500, 500);
 
-	m_player.SetPosition(0, 0);
+	m_player.SetPosition(0, 450);
 	m_player.SetAngle(0.0);
 	m_player.SetSize(10, 10);
 	m_player.SetSpeed(5);
