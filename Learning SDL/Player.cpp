@@ -17,11 +17,11 @@ Player::Player()
 
 	for (int i = 0; i < static_cast<unsigned int>(Player::State::Total_States); i++)
 	{
-		m_image[i].SetSpriteDimension(100, 100);
-		m_image[i].SetImageDimension(8, 1, 160, 24);
+		/*m_image[i].SetSpriteDimension(100, 100);
+		m_image[i].SetImageDimension(8, 1, 160, 24);*/
 
 		m_image[i].IsAnimated(true);
-		m_image[i].SetAnimationSpeed(3.5f);
+		m_image[i].SetAnimationSpeed(1.0f);
 
 		if (i == static_cast<unsigned int>(Player::State::Jump))
 		{
@@ -76,7 +76,7 @@ void Player::Render()
 			/*m_image[static_cast<unsigned int>(m_state)].Load("Assets/Images/protag_run.png");
 			m_image[static_cast<unsigned int>(m_state)].SetSpriteDimension(100, 100);
 			m_image[static_cast<unsigned int>(m_state)].SetImageDimension(6, 1, 120, 24);*/
-			m_image[static_cast<unsigned int>(m_state)].Render(m_position.x, m_position.y, m_angle, Sprite::Flip::NO_FLIP);
+			m_image[static_cast<unsigned int>(m_state)].Render(m_position.x, m_position.y, m_angle, Sprite::Flip::NoFlip);
 		}
 
 		else
@@ -84,7 +84,7 @@ void Player::Render()
 			/*m_image[static_cast<unsigned int>(m_state)].Load("Assets/Images/protag_run.png");
 			m_image[static_cast<unsigned int>(m_state)].SetSpriteDimension(100, 100);
 			m_image[static_cast<unsigned int>(m_state)].SetImageDimension(6, 1, 120, 24);*/
-			m_image[static_cast<unsigned int>(m_state)].Render(m_position.x, m_position.y, m_angle, Sprite::Flip::HORZ_FLIP);
+			m_image[static_cast<unsigned int>(m_state)].Render(m_position.x, m_position.y, m_angle, Sprite::Flip::HorzFlip);
 		}
 	}
 }
