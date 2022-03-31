@@ -8,7 +8,7 @@ class Music
 
 public:
 
-	enum class PlayLoop { PLAY_ONCE = 1, PLAY_ENDLESS = -1 };
+	enum class PlayLoop { PlayOnce = 1, PlayEndless = -1 };
 	static bool Initialize();
 	static void Shutdown();
 
