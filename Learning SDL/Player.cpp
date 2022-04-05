@@ -2,7 +2,7 @@
 
 Player::Player()
 {
-	//auto setSprite = [&m_image](static_cast<unsigned int>(Player::State::Total_States), const std::string& filename){}
+	//auto setSprite = [&](State playerState, const std::string& filename){}
 	
 	m_image[static_cast<unsigned int>(Player::State::Idle)].Load("Assets/Images/protag_idle.png"); //cropped from a sprite downloaded for free from OpenGameArt.org
 	m_image[static_cast<unsigned int>(Player::State::Run)].Load("Assets/Images/protag_run.png");
@@ -18,7 +18,7 @@ Player::Player()
 	m_image[static_cast<unsigned int>(Player::State::Jump)].SetImageDimension(8, 1, 158, 24);
 
 
-	for (int i = 0; i < static_cast<unsigned int>(Player::State::Total_States); i++)
+	for (int i = 0; i < static_cast<unsigned int>(Player::State::TotalStates); i++)
 	{
 		/*m_image[i].SetSpriteDimension(100, 100);
 		m_image[i].SetImageDimension(8, 1, 160, 24);*/

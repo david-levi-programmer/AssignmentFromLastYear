@@ -84,9 +84,6 @@
     <ClCompile Include="Game.cpp">
       <Filter>Source Files\Game State</Filter>
     </ClCompile>
-    <ClCompile Include="State.cpp">
-      <Filter>Source Files\Game State</Filter>
-    </ClCompile>
     <ClCompile Include="PlayState.cpp">
       <Filter>Source Files\Game State</Filter>
     </ClCompile>

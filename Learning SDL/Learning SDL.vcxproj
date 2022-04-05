@@ -162,7 +162,6 @@
     <ClCompile Include="Screen.cpp" />
     <ClCompile Include="Sound.cpp" />
     <ClCompile Include="SphereCollide.cpp" />
-    <ClCompile Include="State.cpp" />
     <ClCompile Include="Text.cpp" />
     <ClCompile Include="Vector2D.cpp" />
   </ItemGroup>

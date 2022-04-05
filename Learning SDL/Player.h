@@ -18,7 +18,7 @@ public:
 		Idle,
 		Run,
 		Jump,
-		Total_States
+		TotalStates
 	};
 
 	enum class Direction
@@ -51,7 +51,7 @@ private:
 	int m_speed = 0;
 	Jump m_jumpDirection = Player::Jump::None;
 
-	Sprite m_image[static_cast<unsigned int>(Player::State::Total_States)]; 
+	Sprite m_image[static_cast<unsigned int>(Player::State::TotalStates)]; 
 	Sound m_footstep;
 	State m_state = Player::State::Idle;
 
