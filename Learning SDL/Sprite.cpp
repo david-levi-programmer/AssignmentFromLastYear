@@ -45,8 +45,8 @@ void Sprite::SetSpriteDimension(int width, int height)
 
 void Sprite::SetImageDimension(int columns, int rows, int width, int height)
 {
-	m_imageDimension.x = width;
-	m_imageDimension.y = height;
+	m_imageDimension.x = columns;
+	m_imageDimension.y = rows;
 
 	m_celDimension.x = width / columns;
 	m_celDimension.y = height / rows;
@@ -79,7 +79,7 @@ void Sprite::Update()
 		static float total = 0.0f;
 		total += 0.1f;
 
-		m_imageCel = static_cast<int>(total *= m_animationSpeed) % (m_imageDimension.x * m_imageDimension.y);
+		m_imageCel = static_cast<int>(total * m_animationSpeed) % (m_imageDimension.x * m_imageDimension.y);
 	
 		if (!m_isLooping && m_imageCel == (m_imageDimension.x * m_imageDimension.y - 1))
 		{
@@ -97,8 +97,8 @@ void Sprite::Render(int xPos, int yPos, double angle, Sprite::Flip flip)
 
 		sourceRect.x = (m_imageCel % m_imageDimension.x) * m_celDimension.x;
 		sourceRect.y = (m_imageCel / m_imageDimension.x) * m_celDimension.y;
-		sourceRect.w = m_imageDimension.x;
-		sourceRect.h = m_imageDimension.y;
+		sourceRect.w = m_celDimension.x;
+		sourceRect.h = m_celDimension.y;
 
 		targetRect.x = xPos;
 		targetRect.y = yPos;
