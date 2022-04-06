@@ -146,7 +146,7 @@ void Player::Update()
 
 	else if (m_state == Player::State::Jump)
 	{
-		if (m_position.y >= 20 && m_jumpDirection == Player::Jump::Up)
+		if (m_position.y > 300 && m_jumpDirection == Player::Jump::Up)
 		{
 			m_direction.x = 0;
 			m_direction.y = -1;
