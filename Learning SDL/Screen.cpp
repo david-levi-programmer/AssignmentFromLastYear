@@ -16,6 +16,7 @@ bool Screen::Initilize(const std::string & windowTitle, int width, int height)
 		return false;
 	}
 	
+	//TODO - Apply SDL_WINDOW_FULLSCREEN in place of 0
 	window = SDL_CreateWindow(windowTitle.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, 0);
 
 	if (!window)
