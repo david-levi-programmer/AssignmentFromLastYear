@@ -1,9 +1,5 @@
 #include "GameObject.h"
 
-GameObject::GameObject() {}
-
-GameObject::~GameObject() {}
-
 const std::string& GameObject::GetTag() const
 {
 	return m_tag;

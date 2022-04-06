@@ -17,17 +17,17 @@ bool Screen::Initilize(const std::string & windowTitle, int width, int height)
 	}
 	
 	//TODO - Apply SDL_WINDOW_FULLSCREEN
-	window = SDL_CreateWindow(windowTitle.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_RESIZABLE);
+	m_window = SDL_CreateWindow(windowTitle.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_RESIZABLE);
 
-	if (!window)
+	if (!m_window)
 	{
 		std::cout << "Error creating game window." << std::endl;
 		return false;
 	}
 
-	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+	m_renderer = SDL_CreateRenderer(m_window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 
-	if (!renderer)
+	if (!m_renderer)
 	{
 		std::cout << "Error creating renderer." << std::endl;
 		return false;
@@ -38,22 +38,28 @@ bool Screen::Initilize(const std::string & windowTitle, int width, int height)
 
 void Screen::Clear()
 {
-	SDL_RenderClear(renderer);
+	SDL_RenderClear(m_renderer);
 }
 
 void Screen::Present()
 {
-	SDL_RenderPresent(renderer);
+	SDL_RenderPresent(m_renderer);
 }
 
 void Screen::Shutdown()
 {
-	SDL_DestroyRenderer(renderer);
-	SDL_DestroyWindow(window);
+	SDL_DestroyRenderer(m_renderer);
+	SDL_DestroyWindow(m_window);
 	SDL_Quit();
+}
+
+Vector2D Screen::GetResolution()
+{
+	SDL_GetWindowSize(m_window, &m_size.x, &m_size.y);
+	return m_size;
 }
 
 SDL_Renderer* Screen::GetRenderer()
 {
-	return renderer;
+	return m_renderer;
 }

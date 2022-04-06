@@ -10,8 +10,8 @@ class GameObject
 
 public:
 	
-	GameObject();
-	~GameObject();
+	GameObject() {};
+	~GameObject() {};
 
 	const std::string& GetTag() const;
 	void SetTag(const std::string& tag);
