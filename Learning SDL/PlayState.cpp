@@ -2,11 +2,11 @@
 
 bool PlayState::OnEnter()
 {
-	m_background.Load("Assets/Images/Shapes.jpg"); //Found on Google Images, searching for royalty-free images
+	m_background.Load("Assets/Images/MysteryCave.jpg"); //Downloaded from Vecteezy
 	m_background.SetSpriteDimension(1280, 720);
-	m_background.SetImageDimension(1, 1, 500, 500);
+	m_background.SetImageDimension(1, 1, 1920, 696);
 
-	m_player.SetPosition(0, 450);
+	m_player.SetPosition(0, 525);
 	m_player.SetAngle(0.0);
 	m_player.SetSize(10, 10);
 	m_player.SetSpeed(5);
@@ -16,7 +16,7 @@ bool PlayState::OnEnter()
 	m_stone.SetSize(10, 10);
 	m_stone.SetSpeed(0);
 
-	m_music.Load("Assets/Audio/Music/bensound-clearday.mp3"); // Composed by Bensound and downloaded from his website
+	m_music.Load("Assets/Audio/Music/Clear Day.mp3"); // Composed by Bensound and downloaded from his website
 	m_music.Play(Music::PlayLoop::PlayEndless);
 
 	//m_font.Load("nevis.ttf", 12);
