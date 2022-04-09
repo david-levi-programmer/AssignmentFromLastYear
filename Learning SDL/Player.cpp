@@ -133,7 +133,7 @@ void Player::Update()
 			m_direction.y = -1;
 			m_jumpDirection = Player::Jump::Down;
 
-			if (m_position.y < 400 && m_jumpDirection != Player::Jump::Up)
+			if (m_position.y < 400 && m_state == Player::State::Jump)
 			{
 				m_direction.x = 0;
 				m_direction.y = 1;
