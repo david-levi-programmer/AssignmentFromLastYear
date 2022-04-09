@@ -25,24 +25,9 @@ Player::Player()
 
 	for (int i = 0; i < static_cast<unsigned int>(Player::State::TotalStates); i++)
 	{
-		/*m_image[i].SetSpriteDimension(100, 100);
-		m_image[i].SetImageDimension(8, 1, 160, 24);*/
-
 		m_image[i].IsAnimated(true);
 		m_image[i].SetAnimationSpeed(1.0f);
 		m_image[i].IsLooping(true);
-
-		//if (i == static_cast<unsigned int>(Player::State::Jump))
-		//{
-		//	/*m_image[i].Load("Assets/Images/protag_jump.png");
-		//	m_image[i].SetSpriteDimension(100, 100);
-		//	m_image[i].SetImageDimension(8, 1, 158, 24);*/
-		//}
-		//
-		//else
-		//{
-		//	m_image[i].IsLooping(true);
-		//}
 	}
 
 	m_footstep.Load("Assets/Audio/Sounds/Footsteps.wav");
@@ -81,17 +66,11 @@ void Player::Render()
 	{
 		if (m_facingDirection == Player::Direction::Right)
 		{
-			/*m_image[static_cast<unsigned int>(m_state)].Load("Assets/Images/protag_run.png");
-			m_image[static_cast<unsigned int>(m_state)].SetSpriteDimension(100, 100);
-			m_image[static_cast<unsigned int>(m_state)].SetImageDimension(6, 1, 120, 24);*/
 			m_image[static_cast<unsigned int>(m_state)].Render(m_position.x, m_position.y, m_angle, Sprite::Flip::NoFlip);
 		}
 
 		else
 		{
-			/*m_image[static_cast<unsigned int>(m_state)].Load("Assets/Images/protag_run.png");
-			m_image[static_cast<unsigned int>(m_state)].SetSpriteDimension(100, 100);
-			m_image[static_cast<unsigned int>(m_state)].SetImageDimension(6, 1, 120, 24);*/
 			m_image[static_cast<unsigned int>(m_state)].Render(m_position.x, m_position.y, m_angle, Sprite::Flip::HorzFlip);
 		}
 	}
@@ -146,12 +125,11 @@ void Player::Update()
 
 	else if (m_state == Player::State::Jump)
 	{
-		if (m_position.y > 300 && m_jumpDirection == Player::Jump::Up)
+		if (m_position.y > 450 && m_jumpDirection == Player::Jump::Up)
 		{
 			m_direction.x = 0;
 			m_direction.y = -1;
 		}
-
 	}
 
 	if (m_position.y < 300)
