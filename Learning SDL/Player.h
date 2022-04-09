@@ -50,6 +50,7 @@ private:
 	Direction m_facingDirection = Player::Direction::Right;
 	int m_speed = 0;
 	Jump m_jumpDirection = Player::Jump::None;
+	int m_heightLimit;
 
 	Sprite m_image[static_cast<unsigned int>(Player::State::TotalStates)]; 
 	Sound m_footstep;
