@@ -127,18 +127,29 @@ void Player::Update()
 
 	else if (m_state == Player::State::Jump)
 	{
-		if (m_position.y >= m_heightLimit && m_jumpDirection == Player::Jump::Up)
+		if (m_position.y < m_heightLimit && m_jumpDirection == Player::Jump::Up)
 		{
 			m_direction.x = 0;
 			m_direction.y = -1;
 			m_jumpDirection = Player::Jump::Down;
 
-			if (m_position.y < 400 && m_state == Player::State::Jump)
+			if (m_position.y < m_heightLimit && m_jumpDirection == Player::Jump::Down)
 			{
 				m_direction.x = 0;
 				m_direction.y = 1;
-				m_state = Player::State::Idle;
 			}
+
+			/*if (m_position.y < 310 && m_state == Player::State::Jump)
+			{
+				m_direction.x = 0;
+				m_direction.y = 1;
+			}*/
+
+			/*if (m_position.y == 520)
+			{
+				m_direction.y = 0;
+				m_state = Player::State::Idle;
+			}*/
 		}
 	}
 
