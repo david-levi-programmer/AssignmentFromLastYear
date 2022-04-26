@@ -15,12 +15,12 @@ void GameObject::SetPosition(int x, int y)
 	m_position = { x, y };
 }
 
-void GameObject::SetPosition(const Vector2D& position)
+void GameObject::SetPosition(const Vector<int>& position)
 {
 	m_position = position;
 }
 
-const Vector2D& GameObject::GetPosition() const
+const Vector<int>& GameObject::GetPosition() const
 {
 	return m_position;
 }
@@ -30,12 +30,12 @@ void GameObject::SetSize(int width, int height)
 	m_size = { width, height };
 }
 
-void GameObject::SetSize(const Vector2D& size)
+void GameObject::SetSize(const Vector<int>& size)
 {
 	m_size = size;
 }
 
-const Vector2D& GameObject::GetSize() const
+const Vector<int>& GameObject::GetSize() const
 {
 	return m_size;
 }

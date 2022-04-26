@@ -58,10 +58,10 @@ const BoxCollide& Player::GetCollider() const
 void Player::Render()
 {
 	m_isVisible = true;
-	
+
 	if (m_isVisible)
 	{
-		if (m_facingDirection == Player::Direction::Right)
+		if (m_facingDirection == Vector<int>::Right)
 		{
 			m_image[static_cast<unsigned int>(m_state)].Render(m_position.x, m_position.y, m_angle, Sprite::Flip::NoFlip);
 		}
@@ -76,30 +76,28 @@ void Player::Render()
 void Player::Update()
 {
 	//==========================Key Inputs============================
-	if (Input::Instance()->GetKeyDown() == SDL_SCANCODE_LEFT)
+	if (Input::Instance()->IsKeyPressed(HM_KEY_LEFT) && m_state != State::Jump)
 	{
 		m_state = Player::State::Run;
-		m_facingDirection = Player::Direction::Left;
+		m_facingDirection = Vector<int>::Left;
 		m_footstep.Play();
 	}
 
-	else if (Input::Instance()->GetKeyDown() == SDL_SCANCODE_RIGHT)
+	else if (Input::Instance()->IsKeyPressed(HM_KEY_RIGHT) && m_state != State::Jump)
 	{
 		m_state = Player::State::Run;
-		m_facingDirection = Player::Direction::Right;
+		m_facingDirection = Vector<int>::Right;
 		m_footstep.Play();
 	}
 
-	else if (Input::Instance()->GetKeyDown() == SDLK_SPACE)
+	else if (Input::Instance()->IsKeyPressed(HM_KEY_SPACE))
 	{
 		m_state = Player::State::Jump;
-		m_jumpDirection = Player::Jump::Up;
 	}
-	
-	else
+
+	else if(m_state != State::Jump)
 	{
-		m_direction.x = 0;
-		m_direction.y = 0;
+		m_direction = Vector<int>::Zero;
 		m_state = Player::State::Idle;
 	}
 
@@ -107,58 +105,31 @@ void Player::Update()
 
 	if (m_state == Player::State::Run)
 	{
-		if(m_facingDirection == Player::Direction::Left)
-		{
-			m_direction.x = -1;
-			m_direction.y = 0;
-		}
-
-		else
-		{
-			m_direction.x = 1;
-			m_direction.y = 0;
-		}
+		m_direction = m_facingDirection;
 	}
 
-	else if (m_state == Player::State::Jump)
+	else if (m_state == Player::State::Jump && m_direction != Vector<int>::Down)
 	{
-		if (m_jumpDirection == Player::Jump::Up)
+		m_direction = Vector<int>::Up;
+
+		if (m_position.y == m_heightLimit)
 		{
-			m_direction.x = 0;
-			m_direction.y = -1;
-			m_jumpDirection == Player::Jump::Down;
-			
-			if (m_position.y == m_heightLimit)
-			{
-				m_direction.x = 0;
-				m_direction.y = 1;
-			}
-
-			if (m_jumpDirection == Player::Jump::Down)
-			{
-				m_direction.x = 0;
-				m_direction.y = 1;
-			}
-
-			/*if (m_position.y < 310 && m_state == Player::State::Jump)
-			{
-				m_direction.x = 0;
-				m_direction.y = 1;
-			}*/
-
-			/*if (m_position.y == 520)
-			{
-				m_direction.y = 0;
-				m_state = Player::State::Idle;
-			}*/
+			m_direction = Vector<int>::Down;
 		}
 	}
 
+	else if (m_state == Player::State::Jump && m_direction == Vector<int>::Down)
+	{
+		if (m_position.y >= 520)
+		{
+			m_state = State::Idle;
+			m_direction = Vector<int>::Zero;
+		}
+	}
 
 	//=====================================================================
 
-	m_direction = m_direction.Scale(m_speed);
-	m_position = m_position.Add(m_direction);
+	m_position = m_position + (m_direction * m_speed);
 
 	m_collider.SetPosition(m_position.x, m_position.y);
 	m_collider.SetDimension(m_size.x, m_size.y);

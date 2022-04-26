@@ -24,7 +24,7 @@ private:
 	Sprite m_image;
 
 	int m_speed = 0;
-	Vector2D m_direction;
+	Vector<int> m_direction;
 	BoxCollide m_collider;
 	//SphereCollide m_collide;
 };

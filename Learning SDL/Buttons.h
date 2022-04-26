@@ -3,7 +3,7 @@
 #include "Sprite.h"
 #include "Music.h"
 #include "Sound.h"
-#include "Input.h"
+//#include "Input.h"
 #include <string>
 
 class Buttons : public GameObject
@@ -30,6 +30,6 @@ private:
 	Status m_buttonState;
 	Sprite m_image;
 	SDL_Rect m_spritePosition;
-	Input m_mousePosition;
+	//Input m_mousePosition;
 
 };

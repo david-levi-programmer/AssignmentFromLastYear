@@ -3,7 +3,7 @@
 #include "GameObject.h"
 #include "Sprite.h"
 #include "Input.h"
-#include "Vector2D.h"
+#include "Vector.h"
 #include "Sound.h"
 #include "BoxCollide.h"
 #include "SphereCollide.h"
@@ -21,18 +21,18 @@ public:
 		TotalStates
 	};
 
-	enum class Direction
+	/*enum class Direction
 	{
 		Left,
 		Right
-	};
+	};*/
 
-	enum class Jump
+	/*enum class Jump
 	{
 		Up,
 		Down,
 		None
-	};
+	};*/
 
 	Player();
 	~Player();
@@ -46,10 +46,14 @@ public:
 
 private:
 
-	Vector2D m_direction;
-	Direction m_facingDirection = Player::Direction::Right;
+	Vector<int> m_direction;
+	Vector<int> m_facingDirection;
+	//Direction m_facingDirection = Player::Direction::Right;
 	int m_speed = 0;
-	Jump m_jumpDirection = Player::Jump::None;
+	
+	//Jump m_jumpDirection = Player::Jump::None;
+	Vector<int> m_jumpDirection = Vector<int>::Zero;
+	
 	int m_heightLimit;
 
 	Sprite m_image[static_cast<unsigned int>(Player::State::TotalStates)]; 

@@ -151,10 +151,10 @@
     <ClCompile Include="Buttons.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="Input.cpp" />
     <ClCompile Include="MenuState.cpp" />
     <ClCompile Include="PlayState.cpp" />
     <ClCompile Include="Sprite.cpp" />
-    <ClCompile Include="Input.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Music.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -163,7 +163,6 @@
     <ClCompile Include="Sound.cpp" />
     <ClCompile Include="SphereCollide.cpp" />
     <ClCompile Include="Text.cpp" />
-    <ClCompile Include="Vector2D.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Block.h" />
@@ -171,10 +170,10 @@
     <ClInclude Include="Buttons.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameObject.h" />
+    <ClInclude Include="Input.h" />
     <ClInclude Include="MenuState.h" />
     <ClInclude Include="PlayState.h" />
     <ClInclude Include="Sprite.h" />
-    <ClInclude Include="Input.h" />
     <ClInclude Include="Music.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Score.h" />
@@ -183,7 +182,7 @@
     <ClInclude Include="SphereCollide.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="Text.h" />
-    <ClInclude Include="Vector2D.h" />
+    <ClInclude Include="Vector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

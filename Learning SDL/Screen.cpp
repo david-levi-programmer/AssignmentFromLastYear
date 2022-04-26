@@ -53,7 +53,7 @@ void Screen::Shutdown()
 	SDL_Quit();
 }
 
-Vector2D Screen::GetResolution()
+Vector<int> Screen::GetResolution()
 {
 	SDL_GetWindowSize(m_window, &m_size.x, &m_size.y);
 	return m_size;

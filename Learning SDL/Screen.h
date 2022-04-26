@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 #include <SDL.h>
-#include "Vector2D.h"
+#include "Vector.h"
 
 class Screen
 {
@@ -15,7 +15,7 @@ public:
 	void Present();
 	void Shutdown();
 
-	Vector2D GetResolution();
+	Vector<int> GetResolution();
 	SDL_Renderer* GetRenderer();
 
 private:
@@ -27,6 +27,6 @@ private:
 	SDL_Window* m_window = nullptr;
 	SDL_Renderer* m_renderer = nullptr;
 
-	Vector2D m_size;
+	Vector<int> m_size;
 
 };

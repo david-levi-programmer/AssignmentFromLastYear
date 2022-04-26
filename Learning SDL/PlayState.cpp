@@ -28,12 +28,12 @@ bool PlayState::OnEnter()
 
 State* PlayState::Update()
 {
-	if (Input::Instance()->ClosedWindow())
+	if (Input::Instance()->IsWindowClosed())
 	{
 		return nullptr;
 	}
 
-	if (Input::Instance()->GetKeyDown() == SDLK_ESCAPE)
+	if (Input::Instance()->IsKeyPressed(HM_KEY_ESCAPE))
 	{
 		return nullptr;
 	}

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Vector2D.h"
+#include "Vector.h"
 #include <string>
 #include "Screen.h"
 #include "Input.h"
@@ -20,12 +20,12 @@ public:
 	virtual void Update() = 0;
 
 	void SetPosition(int x, int y);
-	void SetPosition(const Vector2D& position);
-	const Vector2D& GetPosition() const;
+	void SetPosition(const Vector<int>& position);
+	const Vector<int>& GetPosition() const;
 
 	void SetSize(int width, int height);
-	void SetSize(const Vector2D& size);
-	const Vector2D& GetSize() const;
+	void SetSize(const Vector<int>& size);
+	const Vector<int>& GetSize() const;
 
 	bool isAlive() const;
 	bool isActive() const;
@@ -49,7 +49,7 @@ protected:
 	bool m_isVisible = true;
 	bool m_isAlive = true;
 
-	Vector2D m_size;
-	Vector2D m_position;
+	Vector<int> m_size;
+	Vector<int> m_position;
 
 };
