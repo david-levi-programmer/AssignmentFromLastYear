@@ -55,11 +55,6 @@ const BoxCollide& Player::GetCollider() const
 	return m_collider;
 }
 
-/*const SphereCollide& Player::GetCollider() const
-{
-	return m_collide;
-}*/
-
 void Player::Render()
 {
 	m_isVisible = true;
@@ -127,13 +122,13 @@ void Player::Update()
 
 	else if (m_state == Player::State::Jump)
 	{
-		if (m_position.y < m_heightLimit && m_jumpDirection == Player::Jump::Up)
+		if (m_position.y > m_heightLimit && m_jumpDirection == Player::Jump::Up)
 		{
 			m_direction.x = 0;
 			m_direction.y = -1;
 			m_jumpDirection = Player::Jump::Down;
 
-			if (m_position.y > m_heightLimit && m_jumpDirection == Player::Jump::Down)
+			if (m_position.y < m_heightLimit && m_jumpDirection == Player::Jump::Down)
 			{
 				m_direction.x = 0;
 				m_direction.y = 1;
@@ -164,7 +159,4 @@ void Player::Update()
 	m_collider.Update();
 
 	m_image[static_cast<unsigned int>(m_state)].Update();
-
-	/*m_collide.SetRadius(m_size.x / 2);
-	m_collide.SetPosition(m_position.x, m_position.y);*/
 }

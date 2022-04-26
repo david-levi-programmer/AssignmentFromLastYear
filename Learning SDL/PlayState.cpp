@@ -38,41 +38,6 @@ State* PlayState::Update()
 		return nullptr;
 	}
 
-	//======================Code for debugging================
-
-	/*if (Input::Instance()->GetKeyDown() == SDLK_LEFT)
-	{
-		std::cout << "Left key pressed. Move player left." << std::endl;
-	}
-
-	if (Input::Instance()->GetKeyDown() == SDLK_RIGHT)
-	{
-		std::cout << "Right key pressed. Move player right." << std::endl;
-	}
-
-	if (Input::Instance()->KeyPress())
-	{
-		std::cout << input.GetKeyDown() << std::endl;
-	}
-
-	if (input.GetMouseButtonDown() == SDL_SCANCODE_LEFT)
-	{
-		std::cout << "Left button pressed" << std::endl;
-	}
-
-	else if (input.GetMouseButtonDown() == SDL_SCANCODE_RIGHT)
-	{
-		std::cout << "Right button pressed" << std::endl;
-	}
-
-	else if (input.GetMouseButtonDown() == SDL_BUTTON_MIDDLE)
-	{
-		std::cout << "Mouse wheel pressed" << std::endl;
-	}*/
-
-	/*MousePos mousePos = input.GetMousePosition();
-	std::cout << "Mouse cursor is at position (" << mousePos.x << "," << mousePos.y << ")" << std::endl;*/
-
 	//=======================Player State==================
 
 	m_player.Update();
@@ -94,19 +59,6 @@ State* PlayState::Update()
 	{
 		std::cout << "No collision." << std::endl;
 	}*/
-
-	/*SphereCollide playerCollider = player.GetCollider();
-	SphereCollide stoneCollider = stone.GetCollider();
-
-	if (playerCollider.IsColliding(stoneCollider))
-	{
-		std::cout << "Collision!" << std::endl;
-	}
-
-	else
-	{
-		std::cout << "No collision." << std::endl;
-	}*/
 	//============================
 
 	return this;
@@ -115,8 +67,6 @@ State* PlayState::Update()
 bool PlayState::Render()
 {
 	m_background.Render(0, 0, 0.0);
-
-	//m_player.Render();
 
 	if (m_player.isVisible())
 	{
