@@ -22,4 +22,5 @@ public:
 private:
 
 	std::unique_ptr<State> m_gameState;
+
 };

@@ -3,7 +3,6 @@
 #include "GameObject.h"
 #include "Sprite.h"
 #include "BoxCollide.h"
-#include "SphereCollide.h"
 
 class Block : public GameObject
 {
@@ -15,7 +14,6 @@ public:
 
 	void SetSpeed(int speed);
 	const BoxCollide& GetCollider() const;
-	//const SphereCollide& GetCollider() const;
 	virtual void Update();
 	virtual void Render();
 
@@ -26,5 +24,5 @@ private:
 	int m_speed = 0;
 	Vector<int> m_direction;
 	BoxCollide m_collider;
-	//SphereCollide m_collide;
+
 };

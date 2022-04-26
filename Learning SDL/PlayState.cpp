@@ -46,7 +46,7 @@ State* PlayState::Update()
 
 	m_stone.Update();
 
-	//===========Collision=================================
+	//=======================Collision=====================
 	m_playerCollider = m_player.GetCollider();
 	//BoxCollide stoneCollider = stone.GetCollider();
 

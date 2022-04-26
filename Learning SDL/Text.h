@@ -30,4 +30,5 @@ private:
 	SDL_Color m_color;
 	SDL_Point m_dimension;
 	SDL_Texture* m_texture;
+
 };
