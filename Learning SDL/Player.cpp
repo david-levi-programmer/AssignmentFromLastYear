@@ -133,7 +133,7 @@ void Player::Update()
 				m_direction.y = 0;
 			}
 
-			while (m_jumpDirection == Player::Jump::Down)
+			if (m_jumpDirection == Player::Jump::Down)
 			{
 				m_direction.x = 0;
 				m_direction.y = 1;
