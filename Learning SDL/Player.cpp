@@ -109,9 +109,9 @@ void Player::Update()
 		m_direction = m_facingDirection;
 	}
 
-	else if (m_state == Player::State::Jump && m_direction != Vector<int>::Down)
+	else if (m_state == Player::State::Jump && m_jumpDirection != Vector<int>::Down)
 	{
-		m_direction = Vector<int>::Up;
+		m_jumpDirection = Vector<int>::Up;
 
 		if (Input::Instance()->IsKeyPressed(HM_KEY_LEFT))
 		{
@@ -127,22 +127,35 @@ void Player::Update()
 
 		if (m_position.y == m_heightLimit)
 		{
-			m_direction = Vector<int>::Down;
+			m_jumpDirection = Vector<int>::Down;
 		}
 	}
 
-	else if (m_state == Player::State::Jump && m_direction == Vector<int>::Down)
+	else if (m_state == Player::State::Jump && m_jumpDirection == Vector<int>::Down)
 	{
+		if (Input::Instance()->IsKeyPressed(HM_KEY_LEFT))
+		{
+			m_facingDirection = Vector<int>::Left;
+			m_direction = m_facingDirection;
+		}
+
+		if (Input::Instance()->IsKeyPressed(HM_KEY_RIGHT))
+		{
+			m_facingDirection = Vector<int>::Right;
+			m_direction = m_facingDirection;
+		}
+
 		if (m_position.y >= 520)
 		{
 			m_state = State::Idle;
-			m_direction = Vector<int>::Zero;
+			m_jumpDirection = Vector<int>::Zero;
 		}
 	}
 
 	//=====================================================================
 
 	m_position = m_position + (m_direction * m_speed);
+	m_position = m_position + (m_jumpDirection * m_speed);
 
 	m_collider.SetPosition(m_position.x, m_position.y);
 	m_collider.SetDimension(m_size.x, m_size.y);
