@@ -10,6 +10,9 @@ Screen* Screen::Instance()
 
 bool Screen::Initilize(const std::string & windowTitle, int width, int height)
 {
+	m_size.x = width;
+	m_size.y = height;
+
 	if (SDL_Init(SDL_INIT_EVERYTHING) == -1)
 	{
 		std::cout << "Error initializing SDL." << std::endl;
@@ -55,7 +58,7 @@ void Screen::Shutdown()
 
 Vector<int> Screen::GetResolution()
 {
-	SDL_GetWindowSize(m_window, &m_size.x, &m_size.y);
+	//SDL_GetWindowSize(m_window, &m_size.x, &m_size.y);
 	return m_size;
 }
 

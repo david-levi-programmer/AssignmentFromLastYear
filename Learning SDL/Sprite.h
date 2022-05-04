@@ -23,6 +23,7 @@ public:
 
 	void SetImageCel(int column, int row);
 	void SetAnimationSpeed(float speed);
+	SDL_Point GetSpriteDimension();
 	void SetSpriteDimension(int width, int height);
 	void SetImageDimension(int columns, int rows, int width, int height);
 

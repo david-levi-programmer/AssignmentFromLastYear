@@ -22,7 +22,6 @@ Player::Player()
 	m_image[static_cast<unsigned int>(Player::State::Jump)].SetSpriteDimension(100, 100);
 	m_image[static_cast<unsigned int>(Player::State::Jump)].SetImageDimension(8, 1, 158, 24);
 
-
 	for (int i = 0; i < static_cast<unsigned int>(Player::State::TotalStates); i++)
 	{
 		m_image[i].IsAnimated(true);
@@ -33,6 +32,9 @@ Player::Player()
 	m_footstep.Load("Assets/Audio/Sounds/Footsteps.wav");
 
 	m_heightLimit = 300;
+
+	m_collider.SetDimension(m_image[static_cast<unsigned int>(m_state)].GetSpriteDimension().x, 
+		m_image[static_cast<unsigned int>(m_state)].GetSpriteDimension().y);
 }
 
 Player::~Player()
@@ -54,6 +56,12 @@ const BoxCollider& Player::GetCollider() const
 {
 	return m_collider;
 }
+
+SDL_Point Player::GetDimension()
+{
+	return m_image[static_cast<unsigned int>(m_state)].GetSpriteDimension();
+}
+
 
 void Player::Render()
 {
@@ -153,12 +161,21 @@ void Player::Update()
 	}
 
 	//=====================================================================
-
 	m_position = m_position + (m_direction * m_speed);
 	m_position = m_position + (m_jumpDirection * m_speed);
 
+	if (m_position.x > Screen::Instance()->GetResolution().x - m_image[static_cast<unsigned int>(m_state)].GetSpriteDimension().x)
+	{
+		m_position.x = Screen::Instance()->GetResolution().x - m_image[static_cast<unsigned int>(m_state)].GetSpriteDimension().x;
+	}
+
+	if (m_position.x < 0)
+	{
+		m_position.x = 0;
+	}
+
 	m_collider.SetPosition(m_position.x, m_position.y);
-	m_collider.SetDimension(m_size.x, m_size.y);
+	//m_collider.SetDimension(m_size.x, m_size.y);
 	m_collider.Update();
 
 	m_image[static_cast<unsigned int>(m_state)].Update();

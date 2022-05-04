@@ -1,5 +1,5 @@
 #pragma once
-
+#include <iostream>
 #include "GameObject.h"
 #include "Sprite.h"
 #include "Input.h"
@@ -26,6 +26,7 @@ public:
 	void SetSpeed(int speed);
 	void SetState(State state);
 	const BoxCollider& GetCollider() const;
+	SDL_Point GetDimension();
 	virtual void Render();
 	virtual void Update();
 

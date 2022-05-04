@@ -2,8 +2,8 @@
 
 Score::Score()
 {
-	m_text.Load("../Assets/Fonts/nevis.ttf", 100); //downloaded for free
-	m_text.SetColor(255, 0, 0, 255);
+	m_text.Load("/Assets/Fonts/nevis.ttf", 100); //downloaded for free
+	m_text.SetColor(255, 30, 0, 255);
 	m_text.SetDimension(175, 50);
 }
 

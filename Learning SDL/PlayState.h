@@ -28,6 +28,5 @@ private:
 	Music m_music;
 	Player m_player;
 	Text m_font;
-	BoxCollider m_playerCollider;
 
 };

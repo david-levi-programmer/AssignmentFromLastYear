@@ -37,6 +37,11 @@ void Sprite::SetAnimationSpeed(float speed)
 	m_animationSpeed = speed;
 }
 
+SDL_Point Sprite::GetSpriteDimension()
+{
+	return m_spriteDimension;
+}
+
 void Sprite::SetSpriteDimension(int width, int height)
 {
 	m_spriteDimension.x = width;

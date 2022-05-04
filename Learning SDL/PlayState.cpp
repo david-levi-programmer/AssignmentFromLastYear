@@ -22,13 +22,15 @@ bool PlayState::OnEnter()
 
 	m_font.Load("nevis.ttf", 12);
 	m_font.Render(50, 450);
-	m_score.SetScore(100);
+	m_score.SetScore(0);
 
 	return true;
 }
 
 State* PlayState::Update()
 {
+	
+
 	if (Input::Instance()->IsWindowClosed())
 	{
 		return nullptr;
@@ -41,21 +43,25 @@ State* PlayState::Update()
 
 	//=======================Player State==================
 
-	m_player.Update();
+	
 
 	//=====================================================
 
+	m_player.Update();
 	m_stone.Update();
 
 	//=======================Collision=====================
-	m_playerCollider = m_player.GetCollider();
-	BoxCollider stoneCollider = m_stone.GetCollider();
 
-	if (m_playerCollider.IsColliding(stoneCollider))
+	if (m_player.GetCollider().IsColliding(m_stone.GetCollider()))
 	{
-		//TODO - You know that the collsion works, so now what?
-		
+		std::cout << "COLLISION" << std::endl;
 	}
+
+	else 
+	{
+		std::cout << "NO COLLISION" << std::endl;
+	}
+
 	//============================
 
 	return this;
