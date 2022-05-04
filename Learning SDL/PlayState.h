@@ -4,7 +4,7 @@
 #include "Music.h"
 #include "Player.h"
 #include "State.h"
-//#include "Sound.h"
+#include "Sound.h"
 #include "Score.h"
 #include "Text.h"
 #include "BoxCollider.h"

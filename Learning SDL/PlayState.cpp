@@ -50,6 +50,12 @@ State* PlayState::Update()
 	//=======================Collision=====================
 	m_playerCollider = m_player.GetCollider();
 	BoxCollider stoneCollider = m_stone.GetCollider();
+
+	if (m_playerCollider.IsColliding(stoneCollider))
+	{
+		//TODO - You know that the collsion works, so now what?
+		
+	}
 	//============================
 
 	return this;
