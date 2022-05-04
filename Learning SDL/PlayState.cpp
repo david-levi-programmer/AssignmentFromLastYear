@@ -50,16 +50,6 @@ State* PlayState::Update()
 	//=======================Collision=====================
 	m_playerCollider = m_player.GetCollider();
 	BoxCollider stoneCollider = m_stone.GetCollider();
-
-	if (m_playerCollider.IsColliding(stoneCollider))
-	{
-		std::cout << "Collision!" << std::endl;
-	}
-
-	else
-	{
-		std::cout << "No collision." << std::endl;
-	}
 	//============================
 
 	return this;
