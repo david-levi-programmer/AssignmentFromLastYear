@@ -112,6 +112,18 @@ void Player::Update()
 	{
 		m_direction = Vector<int>::Up;
 
+		if (Input::Instance()->IsKeyPressed(HM_KEY_LEFT))
+		{
+			m_facingDirection = Vector<int>::Left;
+			m_direction = m_facingDirection;
+		}
+
+		if (Input::Instance()->IsKeyPressed(HM_KEY_RIGHT))
+		{
+			m_facingDirection = Vector<int>::Right;
+			m_direction = m_facingDirection;
+		}
+
 		if (m_position.y == m_heightLimit)
 		{
 			m_direction = Vector<int>::Down;
