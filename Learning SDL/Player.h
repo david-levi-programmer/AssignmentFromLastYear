@@ -5,7 +5,7 @@
 #include "Input.h"
 #include "Vector.h"
 #include "Sound.h"
-#include "BoxCollide.h"
+#include "BoxCollider.h"
 
 class Player : public GameObject //inheritance - player is a game object
 {
@@ -25,7 +25,7 @@ public:
 
 	void SetSpeed(int speed);
 	void SetState(State state);
-	const BoxCollide& GetCollider() const;
+	const BoxCollider& GetCollider() const;
 	virtual void Render();
 	virtual void Update();
 
@@ -43,5 +43,5 @@ private:
 	Sound m_footstep;
 	State m_state = Player::State::Idle;
 
-	BoxCollide m_collider;
+	BoxCollider m_collider;
 };

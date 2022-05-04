@@ -1,4 +1,5 @@
 #include "PlayState.h"
+#include <iostream>
 
 bool PlayState::OnEnter()
 {
@@ -48,9 +49,9 @@ State* PlayState::Update()
 
 	//=======================Collision=====================
 	m_playerCollider = m_player.GetCollider();
-	//BoxCollide stoneCollider = stone.GetCollider();
+	BoxCollider stoneCollider = m_stone.GetCollider();
 
-	/*if (playerCollider.IsColliding(stoneCollider))
+	if (m_playerCollider.IsColliding(stoneCollider))
 	{
 		std::cout << "Collision!" << std::endl;
 	}
@@ -58,7 +59,7 @@ State* PlayState::Update()
 	else
 	{
 		std::cout << "No collision." << std::endl;
-	}*/
+	}
 	//============================
 
 	return this;

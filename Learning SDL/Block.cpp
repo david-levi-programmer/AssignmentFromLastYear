@@ -17,7 +17,7 @@ void Block::SetSpeed(int speed)
 	m_speed = speed;
 }
 
-const BoxCollide& Block::GetCollider() const
+const BoxCollider& Block::GetCollider() const
 {
 	return m_collider;
 }

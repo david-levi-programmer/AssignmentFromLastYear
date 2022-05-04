@@ -7,7 +7,7 @@
 //#include "Sound.h"
 #include "Score.h"
 #include "Text.h"
-#include "BoxCollide.h"
+#include "BoxCollider.h"
 
 class PlayState : public State
 {
@@ -28,6 +28,6 @@ private:
 	Music m_music;
 	Player m_player;
 	Text m_font;
-	BoxCollide m_playerCollider;
+	BoxCollider m_playerCollider;
 
 };

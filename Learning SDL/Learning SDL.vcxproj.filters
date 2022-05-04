@@ -66,10 +66,7 @@
     <ClCompile Include="Score.cpp">
       <Filter>Source Files\GameObjects</Filter>
     </ClCompile>
-    <ClCompile Include="BoxCollide.cpp">
-      <Filter>Source Files\Components</Filter>
-    </ClCompile>
-    <ClCompile Include="SphereCollide.cpp">
+    <ClCompile Include="BoxCollider.cpp">
       <Filter>Source Files\Components</Filter>
     </ClCompile>
     <ClCompile Include="Sprite.cpp">
@@ -116,10 +113,7 @@
     <ClInclude Include="Score.h">
       <Filter>Header Files\GameObjects</Filter>
     </ClInclude>
-    <ClInclude Include="BoxCollide.h">
-      <Filter>Header Files\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="SphereCollide.h">
+    <ClInclude Include="BoxCollider.h">
       <Filter>Header Files\Components</Filter>
     </ClInclude>
     <ClInclude Include="Sprite.h">
