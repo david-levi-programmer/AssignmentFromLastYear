@@ -50,7 +50,7 @@ void Player::SetState(State state)
 	m_state = state;
 }
 
-const BoxCollide& Player::GetCollider() const
+const BoxCollider& Player::GetCollider() const
 {
 	return m_collider;
 }
