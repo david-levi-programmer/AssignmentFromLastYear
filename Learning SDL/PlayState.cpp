@@ -19,7 +19,7 @@ bool PlayState::OnEnter()
 	m_music.Load("Assets/Audio/Music/Clear Day.mp3"); // Composed by Bensound and downloaded from his website
 	m_music.Play(Music::PlayLoop::PlayEndless);
 
-	//m_font.Load("nevis.ttf", 12);
+	m_font.Load("nevis.ttf", 12);
 	m_font.Render(50, 450);
 	m_score.SetScore(100);
 
