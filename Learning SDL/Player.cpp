@@ -93,6 +93,7 @@ void Player::Update()
 	else if (Input::Instance()->IsKeyPressed(HM_KEY_SPACE))
 	{
 		m_state = Player::State::Jump;
+		m_jumpDirection = Vector<int>::Up;
 	}
 
 	else if(m_state != State::Jump)
