@@ -3,7 +3,7 @@
 Coin::Coin()
 {
     m_image.Load("Assets/Images/Treasure.png");
-    m_image.SetSpriteDimension(100, 100);
+    m_image.SetSpriteDimension(75, 75);
     m_image.SetImageDimension(6, 1, 3072, 512);
 
     m_image.IsAnimated(true);

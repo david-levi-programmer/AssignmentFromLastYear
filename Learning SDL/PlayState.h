@@ -8,6 +8,7 @@
 #include "Score.h"
 #include "Text.h"
 #include "BoxCollider.h"
+#include "Coin.h"
 
 class PlayState : public State
 {
@@ -24,9 +25,10 @@ private:
 	bool m_IsGameRunning = true;
 	Sprite m_background;
 	Score m_score;
-	Block m_stone;
+	Block m_block;
 	Music m_music;
 	Player m_player;
 	Text m_font;
+	Coin m_coin;
 
 };

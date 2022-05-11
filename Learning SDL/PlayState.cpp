@@ -12,10 +12,14 @@ bool PlayState::OnEnter()
 	m_player.SetSize(10, 10);
 	m_player.SetSpeed(5);
 
-	m_stone.SetPosition(700, 520);
-	m_stone.SetAngle(0.0);
-	m_stone.SetSize(10, 10);
-	m_stone.SetSpeed(0);
+	m_block.SetPosition(700, 520);
+	m_block.SetAngle(0.0);
+	m_block.SetSize(10, 10);
+	m_block.SetSpeed(0);
+
+	m_coin.SetPosition(300, 520);
+	m_coin.SetAngle(0.0);
+	m_coin.SetSize(10, 10);
 
 	m_music.Load("Assets/Audio/Music/Clear Day.mp3"); // Composed by Bensound and downloaded from his website
 	m_music.Play(Music::PlayLoop::PlayEndless);
@@ -43,14 +47,19 @@ State* PlayState::Update()
 	//=======================Object States==================
 
 	m_player.Update();
-	m_stone.Update();
+	m_block.Update();
+	m_coin.Update();
 
 	//=======================Collision======================
 
-	if (m_player.GetCollider().IsColliding(m_stone.GetCollider()))
+	if (m_player.GetCollider().IsColliding(m_block.GetCollider()))
 	{
-		
 		std::cout << "COLLISION" << std::endl;
+	}
+
+	if (m_player.GetCollider().IsColliding(m_coin.GetCollider()))
+	{
+		std::cout << "You found treasure!" << std::endl;
 	}
 
 	//======================================================
@@ -67,7 +76,9 @@ bool PlayState::Render()
 		m_player.Render();
 	}
 
-	m_stone.Render();
+	m_block.Render();
+
+	m_coin.Render();
 
 	m_score.Render();
 
