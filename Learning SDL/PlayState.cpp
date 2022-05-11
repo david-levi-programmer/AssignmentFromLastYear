@@ -29,7 +29,6 @@ bool PlayState::OnEnter()
 
 State* PlayState::Update()
 {
-	
 
 	if (Input::Instance()->IsWindowClosed())
 	{
@@ -41,28 +40,20 @@ State* PlayState::Update()
 		return nullptr;
 	}
 
-	//=======================Player State==================
-
-	
-
-	//=====================================================
+	//=======================Object States==================
 
 	m_player.Update();
 	m_stone.Update();
 
-	//=======================Collision=====================
+	//=======================Collision======================
 
 	if (m_player.GetCollider().IsColliding(m_stone.GetCollider()))
 	{
+		
 		std::cout << "COLLISION" << std::endl;
 	}
 
-	else 
-	{
-		std::cout << "NO COLLISION" << std::endl;
-	}
-
-	//============================
+	//======================================================
 
 	return this;
 }
