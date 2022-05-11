@@ -59,7 +59,8 @@ State* PlayState::Update()
 
 	if (m_player.GetCollider().IsColliding(m_coin.GetCollider()))
 	{
-		std::cout << "You found treasure!" << std::endl;
+		std::cout << "You're filthy stinkin' RICH!!!" << std::endl;
+		m_score->SetScore(+1);
 	}
 
 	//======================================================

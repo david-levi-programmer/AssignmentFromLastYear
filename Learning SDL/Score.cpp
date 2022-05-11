@@ -4,7 +4,7 @@ Score::Score()
 {
 	m_text.Load("Assets/Images/nevis.ttf", 100); //downloaded for free
 	m_text.SetColor(0, 0, 0, 255);
-	m_text.SetDimension(50, 50);
+	m_text.SetDimension(75, 75);
 }
 
 Score::~Score()

@@ -98,7 +98,7 @@ void Player::Update()
 		m_footstep.Play();
 	}
 
-	else if (Input::Instance()->IsKeyPressed(HM_KEY_SPACE))
+	else if (m_state != State::Jump && Input::Instance()->IsKeyPressed(HM_KEY_SPACE))
 	{
 		m_state = Player::State::Jump;
 		m_jumpDirection = Vector<int>::Up;
