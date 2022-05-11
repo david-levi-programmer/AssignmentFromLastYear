@@ -11,6 +11,7 @@ public:
 	~Score();
 
 	void SetScore(int score);
+	void AddtoScore();
 
 	virtual void Update() {}
 	virtual void Render();

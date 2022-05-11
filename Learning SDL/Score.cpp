@@ -18,8 +18,13 @@ void Score::SetScore(int score)
 	m_text.SetText(std::to_string(m_score));
 }
 
+void Score::AddtoScore()
+{
+	m_score = m_score + 1;
+}
+
 void Score::Render()
 {
-	SetScore(0);
+	SetScore(m_score);
 	m_text.Render(10, 10);
 }
