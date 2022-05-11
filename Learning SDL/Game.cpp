@@ -3,7 +3,7 @@
 bool Game::Initialize()
 {
     Screen::Instance();
-	//Text::Initialize();
+	Text::Initialize();
 	Music::Initialize();
 
     if (!Screen::Instance()->Initilize("The 3rd Second", 1280, 720))

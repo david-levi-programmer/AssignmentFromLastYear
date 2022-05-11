@@ -24,9 +24,9 @@ bool PlayState::OnEnter()
 	m_music.Load("Assets/Audio/Music/Clear Day.mp3"); // Composed by Bensound and downloaded from his website
 	m_music.Play(Music::PlayLoop::PlayEndless);
 
-	m_font.Load("nevis.ttf", 12);
-	m_font.Render(50, 450);
-	m_score.SetScore(0);
+	m_score = std::make_unique<Score>();
+	//m_font.Load("nevis.ttf", 12);
+	//m_font.Render(50, 450);
 
 	return true;
 }
@@ -80,7 +80,7 @@ bool PlayState::Render()
 
 	m_coin.Render();
 
-	m_score.Render();
+	m_score->Render();
 
 	return true;
 }
@@ -88,6 +88,6 @@ bool PlayState::Render()
 void PlayState::OnExit()
 {
 	Music::Shutdown();
-	Text::Shutdown();
+	//Text::Shutdown();
 	m_background.Unload();
 }

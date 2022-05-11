@@ -2,9 +2,9 @@
 
 Score::Score()
 {
-	m_text.Load("/Assets/Fonts/nevis.ttf", 100); //downloaded for free
-	m_text.SetColor(255, 30, 0, 255);
-	m_text.SetDimension(175, 50);
+	m_text.Load("Assets/Images/nevis.ttf", 100); //downloaded for free
+	m_text.SetColor(0, 0, 0, 255);
+	m_text.SetDimension(50, 50);
 }
 
 Score::~Score()
@@ -20,5 +20,6 @@ void Score::SetScore(int score)
 
 void Score::Render()
 {
+	SetScore(0);
 	m_text.Render(10, 10);
 }
