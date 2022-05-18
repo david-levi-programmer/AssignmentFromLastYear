@@ -33,3 +33,8 @@ void Coin::Render()
 {
     m_image.Render(m_position.x, m_position.y, m_angle);
 }
+
+void Coin::Collected()
+{
+	m_image.Unload();
+}

@@ -59,8 +59,8 @@ State* PlayState::Update()
 
 	if (m_player.GetCollider().IsColliding(m_coin.GetCollider()))
 	{
-		std::cout << "You're filthy stinkin' RICH!!!" << std::endl;
 		m_score->AddtoScore();
+		m_coin.Collected();
 	}
 
 	//======================================================
@@ -78,7 +78,7 @@ bool PlayState::Render()
 	}
 
 	m_block.Render();
-
+	
 	m_coin.Render();
 
 	m_score->Render();

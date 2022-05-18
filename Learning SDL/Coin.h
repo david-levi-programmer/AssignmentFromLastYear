@@ -14,6 +14,7 @@ public:
 	const BoxCollider& GetCollider() const;
 	virtual void Update();
 	virtual void Render();
+	void Collected();
 
 private:
 
