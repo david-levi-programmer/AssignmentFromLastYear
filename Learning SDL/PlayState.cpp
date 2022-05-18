@@ -17,7 +17,7 @@ bool PlayState::OnEnter()
 	m_block.SetSize(10, 10);
 	m_block.SetSpeed(0);
 
-	m_coin.SetPosition(rand()%790, 520);
+	m_coin.SetPosition(rand() % 790, 520);
 	m_coin.SetAngle(0.0);
 	m_coin.SetSize(10, 10);
 
@@ -60,6 +60,10 @@ State* PlayState::Update()
 		m_score->AddtoScore();
 		m_coin.SetPosition(rand() % 790, 520);
 	}
+
+	//=======================Timer==========================
+
+	Timer::UpdateTime();
 
 	//======================================================
 

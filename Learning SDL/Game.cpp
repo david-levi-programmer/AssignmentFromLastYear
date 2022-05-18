@@ -38,6 +38,7 @@ bool Game::Run(State* initialState)
                 m_gameState->OnEnter();
             }
         }
+
 		Screen::Instance()->Present();
     }
     
