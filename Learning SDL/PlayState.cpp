@@ -17,7 +17,7 @@ bool PlayState::OnEnter()
 	m_block.SetSize(10, 10);
 	m_block.SetSpeed(0);
 
-	m_coin.SetPosition(300, 520);
+	m_coin.SetPosition(rand()%790, 520);
 	m_coin.SetAngle(0.0);
 	m_coin.SetSize(10, 10);
 
@@ -58,7 +58,7 @@ State* PlayState::Update()
 	if (m_player.GetCollider().IsColliding(m_coin.GetCollider()))
 	{
 		m_score->AddtoScore();
-		m_coin.SetPosition(520, 450);
+		m_coin.SetPosition(rand() % 790, 520);
 	}
 
 	//======================================================

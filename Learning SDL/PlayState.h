@@ -33,4 +33,5 @@ private:
 	Text m_font;
 	Coin m_coin;
 
+
 };
