@@ -58,7 +58,7 @@ State* PlayState::Update()
 	if (m_player.GetCollider().IsColliding(m_coin.GetCollider()))
 	{
 		m_score->AddtoScore();
-		m_coin.Collected();
+		m_coin.SetPosition(520, 450);
 	}
 
 	//======================================================
