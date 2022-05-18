@@ -25,8 +25,6 @@ bool PlayState::OnEnter()
 	m_music.Play(Music::PlayLoop::PlayEndless);
 
 	m_score = std::make_unique<Score>();
-	//m_font.Load("nevis.ttf", 12);
-	//m_font.Render(50, 450);
 
 	return true;
 }
@@ -89,6 +87,5 @@ bool PlayState::Render()
 void PlayState::OnExit()
 {
 	Music::Shutdown();
-	//Text::Shutdown();
 	m_background.Unload();
 }

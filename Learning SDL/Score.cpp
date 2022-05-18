@@ -21,6 +21,11 @@ void Score::SetScore(int score)
 void Score::AddtoScore()
 {
 	m_score = m_score + 1;
+
+	if (m_score > 999)
+	{
+		m_score = 999;
+	}
 }
 
 void Score::Render()
