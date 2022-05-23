@@ -12,17 +12,15 @@ public:
 
 	void SetTimer(int time);
 
-	virtual void Update() {}
+	void Update();
 	virtual void Render();
-
-	static void UpdateTime();
-	static float GetDTime();
 
 private:
 
-	//unsigned int m_pastTick;
-	//unsigned int m_currentTick;
 	Text m_text;
-	int m_time = 0;
+	float m_time = 0;
+	Uint32 start = 0;
+	Uint32 end = 0;
+	float seconds = 0;
 
 };

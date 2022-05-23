@@ -63,7 +63,7 @@ State* PlayState::Update()
 
 	//=======================Timer==========================
 
-	Timer::UpdateTime();
+	m_time.Update();
 
 	//======================================================
 
@@ -84,6 +84,8 @@ bool PlayState::Render()
 	m_coin.Render();
 
 	m_score->Render();
+
+	m_time.Render();
 
 	return true;
 }

@@ -18,19 +18,16 @@ void Timer::SetTimer(int time)
     m_text.SetText(std::to_string(m_time));
 }
 
+void Timer::Update()
+{
+    Uint32 start = SDL_GetTicks();
+    Uint32 end = SDL_GetTicks();
+    float seconds = (end - start) / 1000.0f;
+    m_time = seconds;
+}
+
 void Timer::Render()
 {
     SetTimer(m_time);
-    m_text.Render(50, 50);
-}
-
-void Timer::UpdateTime()
-{
-    //m_pastTick = m_currentTick;
-    //m_currentTick = SDL_GetTicks();
-}
-
-float Timer::GetDTime()
-{
-    return 0.0f;
+    m_text.Render(1200, 10);
 }

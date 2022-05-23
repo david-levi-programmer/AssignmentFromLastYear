@@ -33,6 +33,6 @@ private:
 	Player m_player;
 	Text m_font;
 	Coin m_coin;
-	float m_time;
+	Timer m_time;
 
 };
