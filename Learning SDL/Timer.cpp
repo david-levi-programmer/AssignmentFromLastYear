@@ -26,8 +26,8 @@ void Timer::Render()
 
 void Timer::UpdateTime()
 {
-    m_pastTick = m_currentTick;
-    m_currentTick = SDL_GetTicks();
+    //m_pastTick = m_currentTick;
+    //m_currentTick = SDL_GetTicks();
 }
 
 float Timer::GetDTime()

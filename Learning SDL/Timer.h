@@ -20,8 +20,8 @@ public:
 
 private:
 
-	static unsigned int m_pastTick;
-	static unsigned int m_currentTick;
+	//unsigned int m_pastTick;
+	//unsigned int m_currentTick;
 	Text m_text;
 	int m_time = 0;
 

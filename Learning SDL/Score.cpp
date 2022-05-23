@@ -1,4 +1,5 @@
 #include "Score.h"
+#include <iostream> //Temporary addition
 
 Score::Score()
 {
@@ -22,9 +23,9 @@ void Score::AddtoScore()
 {
 	m_score = m_score + 1;
 
-	if (m_score > 999)
+	if (m_score == 35)
 	{
-		m_score = 999;
+		std::cout << "You're filthy stinkin' RICH!!!" << std::endl;
 	}
 }
 
