@@ -8,7 +8,7 @@ bool WinState::OnEnter()
 	
 	m_text.Load("Assets/Images/nevis.ttf", 100); //downloaded for free
 	m_text.SetColor(0, 0, 0, 255);
-	m_text.SetDimension(500, 100);
+	m_text.SetDimension(1000, 100);
 	m_text.SetText("You're filthy stinkin' RICH!!! ENTER: Play again ESC: Quit");
 
 	return true;
@@ -38,7 +38,7 @@ bool WinState::Render()
 {
 	m_background.Render(0, 0, 0.0);
 
-	m_text.Render(0, 450);
+	m_text.Render(150, 300);
 
 	return true;
 }

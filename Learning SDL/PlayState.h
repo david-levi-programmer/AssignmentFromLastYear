@@ -1,7 +1,6 @@
 #pragma once
 #include <memory>
 #include "Sprite.h"
-#include "Block.h"
 #include "Music.h"
 #include "Player.h"
 #include "State.h"
@@ -21,7 +20,6 @@ public:
 	bool OnEnter() override;
 	State* Update() override;
 	bool Render() override;
-	State* Win();
 	void OnExit() override;
 
 private:
@@ -29,7 +27,6 @@ private:
 	bool m_IsGameRunning = true;
 	Sprite m_background;
 	Score m_score;
-	Block m_block;
 	Music m_music;
 	Player m_player;
 	Text m_text;

@@ -29,8 +29,6 @@ Player::Player()
 		m_image[i].IsLooping(true);
 	}
 
-	m_footstep.Load("Assets/Audio/Sounds/Footsteps.wav");
-
 	m_heightLimit = 300;
 
 	m_collider.SetDimension(m_image[static_cast<unsigned int>(m_state)].GetSpriteDimension().x, 
@@ -88,14 +86,12 @@ void Player::Update()
 	{
 		m_state = Player::State::Run;
 		m_facingDirection = Vector<int>::Left;
-		m_footstep.Play();
 	}
 
 	else if (Input::Instance()->IsKeyPressed(HM_KEY_RIGHT) && m_state != State::Jump)
 	{
 		m_state = Player::State::Run;
 		m_facingDirection = Vector<int>::Right;
-		m_footstep.Play();
 	}
 
 	else if (m_state != State::Jump && Input::Instance()->IsKeyPressed(HM_KEY_SPACE))
@@ -175,7 +171,6 @@ void Player::Update()
 	}
 
 	m_collider.SetPosition(m_position.x, m_position.y);
-	//m_collider.SetDimension(m_size.x, m_size.y);
 	m_collider.Update();
 
 	m_image[static_cast<unsigned int>(m_state)].Update();

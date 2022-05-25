@@ -27,7 +27,7 @@ void Score::AddtoScore()
 
 bool Score::VictoryCheck()
 {
-	if (m_score == 5)
+	if (m_score == 35)
 	{
 		return true;
 	}

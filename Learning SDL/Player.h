@@ -4,7 +4,6 @@
 #include "Sprite.h"
 #include "Input.h"
 #include "Vector.h"
-#include "Sound.h"
 #include "BoxCollider.h"
 
 class Player : public GameObject //inheritance - player is a game object
@@ -40,8 +39,7 @@ private:
 	
 	int m_heightLimit;
 
-	Sprite m_image[static_cast<unsigned int>(Player::State::TotalStates)]; 
-	Sound m_footstep;
+	Sprite m_image[static_cast<unsigned int>(Player::State::TotalStates)];
 	State m_state = Player::State::Idle;
 
 	BoxCollider m_collider;

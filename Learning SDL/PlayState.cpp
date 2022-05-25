@@ -57,7 +57,7 @@ State* PlayState::Update()
 	if (m_score.VictoryCheck() == true)
 	{
 		std::cout << "WIN CHECK" << std::endl;
-		Win();
+		return new WinState;
 	}
 
 	//======================================================
@@ -81,11 +81,6 @@ bool PlayState::Render()
 	m_time.Render();
 
 	return true;
-}
-
-State* PlayState::Win()
-{
-	return new WinState;
 }
 
 void PlayState::OnExit()
