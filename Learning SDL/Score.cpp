@@ -1,5 +1,4 @@
 #include "Score.h"
-#include "Timer.h"
 #include <iostream> //Temporary addition
 
 Score::Score()

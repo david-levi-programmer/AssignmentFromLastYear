@@ -20,6 +20,7 @@ public:
 	bool OnEnter() override;
 	State* Update() override;
 	bool Render() override;
+	void Win();
 	void OnExit() override;
 
 private:
@@ -31,7 +32,7 @@ private:
 	Block m_block;
 	Music m_music;
 	Player m_player;
-	Text m_font;
+	Text m_text;
 	Coin m_coin;
 	Timer m_time;
 

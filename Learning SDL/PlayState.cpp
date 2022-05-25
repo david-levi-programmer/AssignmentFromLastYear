@@ -61,7 +61,7 @@ State* PlayState::Update()
 		m_coin.SetPosition(rand() % 790, 520);
 	}
 
-	//=======================Timer==========================
+	//=======================Timer/Score====================
 
 	m_time.Update();
 
@@ -88,6 +88,14 @@ bool PlayState::Render()
 	m_time.Render();
 
 	return true;
+}
+
+void PlayState::Win()
+{
+	m_time.Stop();
+	m_text.Load("Assets / Images / nevis.ttf", 100);
+	m_text.SetText("You're filthy stinkin' RICH!!!");
+	m_text.Render(600, 600);
 }
 
 void PlayState::OnExit()

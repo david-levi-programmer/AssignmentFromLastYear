@@ -13,6 +13,7 @@ public:
 	void SetTimer(int time);
 
 	void Update();
+	void Stop();
 	virtual void Render();
 
 private:
