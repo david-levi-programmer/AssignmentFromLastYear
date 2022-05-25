@@ -56,7 +56,6 @@ State* PlayState::Update()
 
 	if (m_score.VictoryCheck() == true)
 	{
-		std::cout << "WIN CHECK" << std::endl;
 		return new WinState;
 	}
 
