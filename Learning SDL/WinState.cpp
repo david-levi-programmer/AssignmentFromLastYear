@@ -1,20 +1,20 @@
-#include "MenuState.h"
+#include "WinState.h"
 
-bool MenuState::OnEnter()
+bool WinState::OnEnter()
 {
 	m_background.Load("Assets/Images/MysteryCave.jpg"); //Downloaded from Vecteezy
 	m_background.SetSpriteDimension(1280, 720);
 	m_background.SetImageDimension(1, 1, 1920, 696);
-
+	
 	m_text.Load("Assets/Images/nevis.ttf", 100); //downloaded for free
 	m_text.SetColor(0, 0, 0, 255);
 	m_text.SetDimension(500, 100);
-	m_text.SetText("Press ENTER to go into THE 3rd SECOND");
+	m_text.SetText("You're filthy stinkin' RICH!!! ENTER: Play again ESC: Quit");
 
 	return true;
 }
 
-State* MenuState::Update()
+State* WinState::Update()
 {
 	if (Input::Instance()->IsWindowClosed())
 	{
@@ -30,20 +30,21 @@ State* MenuState::Update()
 	{
 		return nullptr;
 	}
-	
+
 	return this;
 }
 
-bool MenuState::Render()
+bool WinState::Render()
 {
 	m_background.Render(0, 0, 0.0);
 
-	m_text.Render(300, 450);
-	
+	m_text.Render(0, 450);
+
 	return true;
 }
 
-void MenuState::OnExit()
+void WinState::OnExit()
 {
+	m_background.Unload();
 	m_text.Unload();
 }

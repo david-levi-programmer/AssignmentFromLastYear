@@ -67,6 +67,7 @@ State* PlayState::Update()
 
 	if (m_score.VictoryCheck() == true)
 	{
+		std::cout << "WIN CHECK" << std::endl;
 		Win();
 	}
 
@@ -95,15 +96,12 @@ bool PlayState::Render()
 	return true;
 }
 
-void PlayState::Win()
+State* PlayState::Win()
 {
-	m_time.Stop();
-	//m_text.SetText("You're filthy stinkin' RICH!!!");
-	//m_text.Render(600, 600);
+	return new WinState;
 }
 
 void PlayState::OnExit()
 {
 	Music::Shutdown();
-	m_background.Unload();
 }

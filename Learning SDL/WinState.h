@@ -1,23 +1,14 @@
 #pragma once
-
-#include "Game.h"
 #include "State.h"
-#include "Input.h"
-#include "Screen.h"
-#include "Vector.h"
+#include "Sprite.h"
 #include "Text.h"
-#include "Music.h"
-#include "Sound.h"
-#include "Buttons.h"
+#include "Input.h"
 #include "PlayState.h"
-#include <string>
 
-class MenuState : public State
+class WinState : public State
 {
-	
-public:
 
-	~MenuState() override = default;
+public:
 
 	bool OnEnter() override;
 	State* Update() override;

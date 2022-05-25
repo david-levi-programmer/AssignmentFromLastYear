@@ -1,6 +1,7 @@
 #include <SDL.h>
 #include "Game.h"
 #include "PlayState.h"
+#include "MenuState.h"
 
 int main(int argc, char* argv[])
 {
@@ -8,7 +9,7 @@ int main(int argc, char* argv[])
 
 	if (game->Initialize())
 	{
-		game->Run(new PlayState);
+		game->Run(new MenuState);
 		game->Shutdown();
 	}
 

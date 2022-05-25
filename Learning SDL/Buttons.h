@@ -13,12 +13,15 @@ public:
 
 	enum class Status
 	{
-		Clicked,
+		Default,
 		Hovered,
-		Default
+		Clicked
 	};
 
 	Buttons(const std::string& filename);
+
+	const Status& GetState() const;
+	void Shutdown();
 
 	virtual void Update();
 	virtual void Render();
@@ -29,7 +32,7 @@ private:
 	bool m_isHoveredOver{ false };
 	Status m_buttonState;
 	Sprite m_image;
-	SDL_Rect m_spritePosition;
-	//Input m_mousePosition;
+	SDL_Rect m_mousePosition, m_spritePosition;
+	Sound m_hoverSound, m_clickSound;
 
 };

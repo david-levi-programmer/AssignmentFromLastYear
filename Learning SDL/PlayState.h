@@ -11,6 +11,7 @@
 #include "BoxCollider.h"
 #include "Coin.h"
 #include "Timer.h"
+#include "WinState.h"
 
 class PlayState : public State
 {
@@ -20,7 +21,7 @@ public:
 	bool OnEnter() override;
 	State* Update() override;
 	bool Render() override;
-	void Win();
+	State* Win();
 	void OnExit() override;
 
 private:
