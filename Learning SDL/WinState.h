@@ -4,6 +4,7 @@
 #include "Text.h"
 #include "Input.h"
 #include "PlayState.h"
+#include "Music.h"
 
 class WinState : public State
 {

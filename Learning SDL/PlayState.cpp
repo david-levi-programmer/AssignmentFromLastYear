@@ -12,11 +12,6 @@ bool PlayState::OnEnter()
 	m_player.SetSize(10, 10);
 	m_player.SetSpeed(5);
 
-	m_block.SetPosition(700, 520);
-	m_block.SetAngle(0.0);
-	m_block.SetSize(10, 10);
-	m_block.SetSpeed(0);
-
 	m_coin.SetPosition(rand() % 790, 520);
 	m_coin.SetAngle(0.0);
 	m_coin.SetSize(10, 10);
@@ -45,15 +40,9 @@ State* PlayState::Update()
 	//=======================Object States==================
 
 	m_player.Update();
-	m_block.Update();
 	m_coin.Update();
 
 	//=======================Collision======================
-
-	if (m_player.GetCollider().IsColliding(m_block.GetCollider()))
-	{
-		std::cout << "COLLISION" << std::endl;
-	}
 
 	if (m_player.GetCollider().IsColliding(m_coin.GetCollider()))
 	{
@@ -84,8 +73,6 @@ bool PlayState::Render()
 	{
 		m_player.Render();
 	}
-
-	m_block.Render();
 	
 	m_coin.Render();
 

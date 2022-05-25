@@ -7,8 +7,6 @@
 #include "Vector.h"
 #include "Text.h"
 #include "Music.h"
-#include "Sound.h"
-#include "Buttons.h"
 #include "PlayState.h"
 #include <string>
 

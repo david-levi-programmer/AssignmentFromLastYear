@@ -45,5 +45,6 @@ bool MenuState::Render()
 
 void MenuState::OnExit()
 {
+	Music::Shutdown();
 	m_text.Unload();
 }
