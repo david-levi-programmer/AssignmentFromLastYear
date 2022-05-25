@@ -22,7 +22,6 @@ void Score::SetScore(int score)
 void Score::AddtoScore()
 {
 	m_score = m_score + 1;
-
 }
 
 bool Score::VictoryCheck()
