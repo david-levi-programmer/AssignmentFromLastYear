@@ -20,14 +20,14 @@ void Timer::SetTimer(int time)
 
 void Timer::Update()
 {
-    Uint32 start = SDL_GetTicks();
+    Uint32 end = SDL_GetTicks();
+    float seconds = (end - start) / 1000.0f;
+    m_time = seconds;
 }
 
 void Timer::Stop()
 {
-    Uint32 end = SDL_GetTicks();
-    float seconds = (end - start) / 1000.0f;
-    m_time = seconds;
+    
 }
 
 void Timer::Render()

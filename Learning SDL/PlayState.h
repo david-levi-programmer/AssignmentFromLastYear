@@ -27,8 +27,8 @@ private:
 
 	bool m_IsGameRunning = true;
 	Sprite m_background;
-	//Score m_score;
-	std::unique_ptr<Score> m_score;
+	Score m_score;
+	//std::unique_ptr<Score> m_score;
 	Block m_block;
 	Music m_music;
 	Player m_player;

@@ -23,9 +23,13 @@ void Score::AddtoScore()
 {
 	m_score = m_score + 1;
 
-	if (m_score == 35)
+}
+
+bool Score::VictoryCheck()
+{
+	if (m_score == 5)
 	{
-		std::cout << "You're filthy stinkin' RICH!!!" << std::endl;
+		return true;
 	}
 }
 

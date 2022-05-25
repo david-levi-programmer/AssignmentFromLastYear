@@ -13,6 +13,7 @@ public:
 
 	void SetScore(int score);
 	void AddtoScore();
+	bool VictoryCheck();
 
 	virtual void Update() {}
 	virtual void Render();

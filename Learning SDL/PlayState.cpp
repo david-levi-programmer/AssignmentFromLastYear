@@ -24,7 +24,7 @@ bool PlayState::OnEnter()
 	m_music.Load("Assets/Audio/Music/Clear Day.mp3"); // Composed by Bensound and downloaded from his website
 	m_music.Play(Music::PlayLoop::PlayEndless);
 
-	m_score = std::make_unique<Score>();
+	m_score.SetScore(0);
 
 	return true;
 }
@@ -57,13 +57,18 @@ State* PlayState::Update()
 
 	if (m_player.GetCollider().IsColliding(m_coin.GetCollider()))
 	{
-		m_score->AddtoScore();
+		m_score.AddtoScore();
 		m_coin.SetPosition(rand() % 790, 520);
 	}
 
 	//=======================Timer/Score====================
 
 	m_time.Update();
+
+	if (m_score.VictoryCheck() == true)
+	{
+		Win();
+	}
 
 	//======================================================
 
@@ -83,7 +88,7 @@ bool PlayState::Render()
 	
 	m_coin.Render();
 
-	m_score->Render();
+	m_score.Render();
 
 	m_time.Render();
 
@@ -93,9 +98,8 @@ bool PlayState::Render()
 void PlayState::Win()
 {
 	m_time.Stop();
-	m_text.Load("Assets / Images / nevis.ttf", 100);
-	m_text.SetText("You're filthy stinkin' RICH!!!");
-	m_text.Render(600, 600);
+	//m_text.SetText("You're filthy stinkin' RICH!!!");
+	//m_text.Render(600, 600);
 }
 
 void PlayState::OnExit()
