@@ -8,7 +8,7 @@ class Sound
 
 public:
 
-	Sound();
+	Sound() {}
 
 	bool Load(const std::string& filename);
 	void Unload();

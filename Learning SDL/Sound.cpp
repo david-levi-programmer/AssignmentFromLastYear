@@ -1,8 +1,6 @@
 #include "Sound.h"
 #include <iostream>
 
-Sound::Sound() {}
-
 bool Sound::Load(const std::string& filename)
 {
 	m_sound = Mix_LoadWAV(filename.c_str());
@@ -34,5 +32,4 @@ void Sound::Play(int loop)
 	{
 		std::cout << "Error playing audio file." << std::endl;
 	}
-
 }

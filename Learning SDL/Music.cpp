@@ -17,8 +17,6 @@ void Music::Shutdown()
 	Mix_CloseAudio();
 }
 
-Music::Music() {}
-
 bool Music::Load(const std::string& filename)
 {
 	m_music = Mix_LoadMUS(filename.c_str());

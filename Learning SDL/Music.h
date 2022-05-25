@@ -12,7 +12,7 @@ public:
 	static bool Initialize();
 	static void Shutdown();
 
-	Music();
+	Music() {}
 	bool Load(const std::string& filename);
 	void Unload();
 
