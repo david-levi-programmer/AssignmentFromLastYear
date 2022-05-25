@@ -19,8 +19,7 @@ bool Screen::Initilize(const std::string & windowTitle, int width, int height)
 		return false;
 	}
 	
-	//TODO - Apply SDL_WINDOW_FULLSCREEN
-	m_window = SDL_CreateWindow(windowTitle.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_RESIZABLE);
+	m_window = SDL_CreateWindow(windowTitle.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_FULLSCREEN);
 
 	if (!m_window)
 	{
@@ -58,7 +57,6 @@ void Screen::Shutdown()
 
 Vector<int> Screen::GetResolution()
 {
-	//SDL_GetWindowSize(m_window, &m_size.x, &m_size.y);
 	return m_size;
 }
 

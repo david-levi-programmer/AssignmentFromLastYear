@@ -38,7 +38,6 @@ public:
 	void SetAngle(float angle);
 	float GetAngle() const;
 
-
 protected:
 
 	float m_angle = 0.0f;
