@@ -5,6 +5,8 @@ Score::Score()
 	m_text.Load("Assets/Images/nevis.ttf", 100); //downloaded for free
 	m_text.SetColor(0, 0, 0, 255);
 	m_text.SetDimension(75, 75);
+
+	m_sound.Load("Assets/Audio/Sounds/Coin.wav"); //Downloaded from Freesound.org
 }
 
 Score::~Score()
@@ -21,6 +23,7 @@ void Score::SetScore(int score)
 void Score::AddtoScore()
 {
 	m_score = m_score + 1;
+	m_sound.Play(0);
 }
 
 bool Score::VictoryCheck()

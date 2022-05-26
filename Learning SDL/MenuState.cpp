@@ -6,6 +6,9 @@ bool MenuState::OnEnter()
 	m_background.SetSpriteDimension(1280, 720);
 	m_background.SetImageDimension(1, 1, 1920, 696);
 
+	m_music.Load("Assets/Audio/Music/Hey!.mp3"); // Composed by Bensound and downloaded from his website
+	m_music.Play(Music::PlayLoop::PlayEndless);
+
 	m_text.Load("Assets/Images/nevis.ttf", 100); //downloaded for free
 	m_text.SetColor(0, 0, 0, 255);
 	m_text.SetDimension(1000, 100);
@@ -45,6 +48,6 @@ bool MenuState::Render()
 
 void MenuState::OnExit()
 {
-	Music::Shutdown();
+	m_music.Unload();
 	m_text.Unload();
 }

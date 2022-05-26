@@ -26,5 +26,6 @@ private:
 
 	Sprite m_background;
 	Text m_text;
+	Music m_music;
 
 };

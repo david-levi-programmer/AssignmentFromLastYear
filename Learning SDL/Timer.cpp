@@ -4,7 +4,7 @@ Timer::Timer()
 {
     m_text.Load("Assets/Images/nevis.ttf", 100); //downloaded for free
     m_text.SetColor(0, 0, 0, 255);
-    m_text.SetDimension(75, 75);
+    m_text.SetDimension(100, 100);
 }
 
 Timer::~Timer()
@@ -33,5 +33,5 @@ void Timer::Stop()
 void Timer::Render()
 {
     SetTimer(m_time);
-    m_text.Render(1200, 10);
+    m_text.Render(1175, 5);
 }

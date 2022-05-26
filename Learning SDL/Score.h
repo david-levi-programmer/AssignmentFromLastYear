@@ -2,6 +2,7 @@
 #include "GameObject.h"
 #include "Text.h"
 #include "Timer.h"
+#include "Sound.h"
 
 class Score : public GameObject
 {
@@ -23,5 +24,6 @@ private:
 	int m_score = 0;
 	Text m_text;
 	Timer m_time;
+	Sound m_sound;
 
 };

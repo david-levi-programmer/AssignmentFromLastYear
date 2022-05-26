@@ -84,5 +84,5 @@ bool PlayState::Render()
 
 void PlayState::OnExit()
 {
-	Music::Shutdown();
+	m_music.Unload();
 }
