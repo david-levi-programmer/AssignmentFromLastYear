@@ -52,8 +52,6 @@ State* PlayState::Update()
 
 	//=======================Timer/Score====================
 
-	m_time.Update();
-
 	if (m_score.VictoryCheck() == true)
 	{
 		return new WinState;
@@ -76,8 +74,6 @@ bool PlayState::Render()
 	m_coin.Render();
 
 	m_score.Render();
-
-	m_time.Render();
 
 	return true;
 }

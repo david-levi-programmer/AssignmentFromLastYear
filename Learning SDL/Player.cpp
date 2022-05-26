@@ -26,6 +26,8 @@ Player::Player()
 
 	m_collider.SetDimension(m_image[static_cast<unsigned int>(m_state)].GetSpriteDimension().x, 
 		m_image[static_cast<unsigned int>(m_state)].GetSpriteDimension().y);
+
+	m_jump.Load("Assets/Audio/Sounds/Jump.wav"); //Also downloaded from Freesound.org
 }
 
 Player::~Player()
@@ -90,6 +92,7 @@ void Player::Update()
 	{
 		m_state = Player::State::Jump;
 		m_jumpDirection = Vector<int>::Up;
+		m_jump.Play(0);
 	}
 
 	else if(m_state != State::Jump)

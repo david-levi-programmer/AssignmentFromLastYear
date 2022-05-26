@@ -5,6 +5,7 @@
 #include "Input.h"
 #include "Vector.h"
 #include "BoxCollider.h"
+#include "Sound.h"
 
 class Player : public GameObject //inheritance - player is a game object
 {
@@ -41,6 +42,7 @@ private:
 
 	Sprite m_image[static_cast<unsigned int>(Player::State::TotalStates)];
 	State m_state = Player::State::Idle;
+	Sound m_jump;
 
 	BoxCollider m_collider;
 };

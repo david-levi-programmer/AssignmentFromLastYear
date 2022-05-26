@@ -9,7 +9,6 @@
 #include "Text.h"
 #include "BoxCollider.h"
 #include "Coin.h"
-#include "Timer.h"
 #include "WinState.h"
 
 class PlayState : public State
@@ -31,6 +30,5 @@ private:
 	Player m_player;
 	Text m_text;
 	Coin m_coin;
-	Timer m_time;
 
 };
