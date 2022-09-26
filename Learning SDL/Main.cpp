@@ -1,4 +1,5 @@
 #include <SDL.h>
+#include <SDL_net.h>
 #include "Game.h"
 #include "PlayState.h"
 #include "MenuState.h"
