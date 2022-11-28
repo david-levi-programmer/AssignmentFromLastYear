@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Vector.h"
 #include <string>
+#include "Vector.h"
 #include "Screen.h"
 #include "Input.h"
 

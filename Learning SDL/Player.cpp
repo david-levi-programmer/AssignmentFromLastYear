@@ -100,9 +100,7 @@ void Player::Update()
 		m_direction = Vector<int>::Zero;
 		m_state = Player::State::Idle;
 	}
-
 	//==============================Checks=================================
-
 	if (m_state == Player::State::Run)
 	{
 		m_direction = m_facingDirection;
@@ -150,7 +148,6 @@ void Player::Update()
 			m_jumpDirection = Vector<int>::Zero;
 		}
 	}
-
 	//==============================Collision==============================
 	m_position = m_position + (m_direction * m_speed);
 	m_position = m_position + (m_jumpDirection * m_speed);

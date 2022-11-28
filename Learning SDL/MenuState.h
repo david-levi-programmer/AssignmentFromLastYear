@@ -1,5 +1,6 @@
 #pragma once
 
+#include <string>
 #include "Game.h"
 #include "State.h"
 #include "Input.h"
@@ -9,7 +10,6 @@
 #include "Music.h"
 #include "PlayState.h"
 #include "LobbyState.h"
-#include <string>
 
 class MenuState : public State
 {

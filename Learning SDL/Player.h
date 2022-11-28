@@ -1,4 +1,5 @@
 #pragma once
+
 #include <iostream>
 #include "GameObject.h"
 #include "Sprite.h"
@@ -45,4 +46,5 @@ private:
 	Sound m_jump;
 
 	BoxCollider m_collider;
+
 };

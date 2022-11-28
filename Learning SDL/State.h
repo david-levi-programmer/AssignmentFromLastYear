@@ -11,4 +11,5 @@ public:
 	virtual State* Update() = 0;
 	virtual bool Render() = 0;
 	virtual void OnExit() = 0;
+
 };

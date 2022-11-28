@@ -6,8 +6,6 @@ Coin::Coin()
     m_image.SetSpriteDimension(80, 80);
     m_image.SetImageDimension(6, 1, 3072, 512);
 
-    
-
     m_image.IsAnimated(true);
     m_image.SetAnimationSpeed(1.0f);
     m_image.IsLooping(true);

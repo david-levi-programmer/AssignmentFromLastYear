@@ -37,6 +37,12 @@
     <Filter Include="Header Files\Game State">
       <UniqueIdentifier>{1fcdfd21-8705-4936-b1e1-35099142eb12}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Networking">
+      <UniqueIdentifier>{9cf522c0-b4a4-468c-a607-abbb0f660310}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Networking">
+      <UniqueIdentifier>{01de8cbf-dd4f-4a3f-aba6-07f3ec4b272b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
