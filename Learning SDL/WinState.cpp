@@ -12,7 +12,7 @@ bool WinState::OnEnter()
 	m_text.Load("Assets/Images/nevis.ttf", 100); //downloaded for free
 	m_text.SetColor(0, 0, 0, 255);
 	m_text.SetDimension(1000, 100);
-	m_text.SetText("You're filthy stinkin' RICH!!!\n ENTER: Play again; SPACE: Main Menu; ESC: Quit");
+	m_text.SetText("You're filthy stinkin' RICH!!! ENTER: Play again SPACE: Main Menu ESC: Quit");
 
 	return true;
 }
