@@ -18,8 +18,8 @@ bool Screen::Initilize(const std::string & windowTitle, int width, int height)
 		std::cout << "Error initializing SDL." << std::endl;
 		return false;
 	}
-	
-	m_window = SDL_CreateWindow(windowTitle.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_FULLSCREEN);
+	//TODO - Switch back to fullscreen before submitting
+	m_window = SDL_CreateWindow(windowTitle.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_RESIZABLE);
 
 	if (!m_window)
 	{

@@ -1,5 +1,5 @@
-#include "Sound.h"
 #include <iostream>
+#include "Sound.h"
 
 bool Sound::Load(const std::string& filename)
 {

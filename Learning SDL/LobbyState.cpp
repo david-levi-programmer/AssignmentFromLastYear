@@ -1,58 +1,57 @@
-#include "MenuState.h"
+#include "LobbyState.h"
 
-bool MenuState::OnEnter()
+bool LobbyState::OnEnter()
 {
 	m_background.Load("Assets/Images/MysteryCave.jpg"); //Downloaded from Vecteezy
 	m_background.SetSpriteDimension(1280, 720);
 	m_background.SetImageDimension(1, 1, 1920, 696);
-
+	//TODO - Find good lobby music
 	m_music.Load("Assets/Audio/Music/Hey!.mp3"); // Composed by Bensound and downloaded from his website
 	m_music.Play(Music::PlayLoop::PlayEndless);
 
 	m_text.Load("Assets/Images/nevis.ttf", 100); //downloaded for free
 	m_text.SetColor(0, 0, 0, 255);
 	m_text.SetDimension(1000, 100);
-	//TODO - end the first sentence with a \n then add the following: Press SPACE to prepare a multiplayer game.
-	m_text.SetText("Press ENTER to play singleplayer.");
+	m_text.SetText("Press 1 to host a room.\n Press 2 to join a room.\n Press BACKSPACE to go back.");
 
 	return true;
 }
 
-State* MenuState::Update()
+State* LobbyState::Update()
 {
 	if (Input::Instance()->IsWindowClosed())
 	{
 		return nullptr;
 	}
 
-	if (Input::Instance()->IsKeyPressed(HM_KEY_RETURN))
+	if (Input::Instance()->IsKeyPressed(HM_KEY_1))
 	{
-		return new PlayState;
+		//TODO - server-side code
 	}
 
-	if (Input::Instance()->IsKeyPressed(HM_KEY_SPACE))
+	if (Input::Instance()->IsKeyPressed(HM_KEY_2))
 	{
-		return new LobbyState;
+		//TODO - client-side code
 	}
 
-	if (Input::Instance()->IsKeyPressed(HM_KEY_ESCAPE))
+	if (Input::Instance()->IsKeyPressed(HM_KEY_BACKSPACE))
 	{
-		return nullptr;
+		return new MenuState;
 	}
-	
+
 	return this;
 }
 
-bool MenuState::Render()
+bool LobbyState::Render()
 {
 	m_background.Render(0, 0, 0.0);
 
 	m_text.Render(150, 300);
-	
+
 	return true;
 }
 
-void MenuState::OnExit()
+void LobbyState::OnExit()
 {
 	m_music.Unload();
 	m_text.Unload();

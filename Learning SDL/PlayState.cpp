@@ -1,5 +1,5 @@
-#include "PlayState.h"
 #include <iostream>
+#include "PlayState.h"
 
 bool PlayState::OnEnter()
 {
@@ -26,7 +26,6 @@ bool PlayState::OnEnter()
 
 State* PlayState::Update()
 {
-
 	if (Input::Instance()->IsWindowClosed())
 	{
 		return nullptr;

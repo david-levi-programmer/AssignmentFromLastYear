@@ -8,6 +8,7 @@
 #include "Text.h"
 #include "Music.h"
 #include "PlayState.h"
+#include "LobbyState.h"
 #include <string>
 
 class MenuState : public State

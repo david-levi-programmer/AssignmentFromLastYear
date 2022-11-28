@@ -1,5 +1,5 @@
-#include "Text.h"
 #include <iostream>
+#include "Text.h"
 
 bool Text::Initialize()
 {

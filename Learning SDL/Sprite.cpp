@@ -1,6 +1,5 @@
 #include <iostream>
 #include <SDL_image.h>
-
 #include "Sprite.h"
 
 Sprite::Sprite() 
