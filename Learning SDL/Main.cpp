@@ -10,7 +10,7 @@ int main(int argc, char* argv[])
 
 	if (game->Initialize())
 	{
-		game->Run(new MenuState); //TODO - Set to LobbyState for testing
+		game->Run(new LobbyState); //TODO - Set back to MenuState before submitting
 		game->Shutdown();
 	}
 

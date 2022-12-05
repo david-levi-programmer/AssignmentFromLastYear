@@ -12,8 +12,7 @@ bool MenuState::OnEnter()
 	m_text.Load("Assets/Images/nevis.ttf", 100); //downloaded for free
 	m_text.SetColor(0, 0, 0, 255);
 	m_text.SetDimension(1000, 100);
-	//TODO - end the first sentence with a \n then add the following: Press SPACE to prepare a multiplayer game.
-	m_text.SetText("Press ENTER to play singleplayer.");
+	m_text.SetText("ENTER: Singleplayer SPACE: Multiplayer ESC: Quit");
 
 	return true;
 }

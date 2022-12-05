@@ -1,4 +1,6 @@
 #include "LobbyState.h"
+#include "Server.h"
+#include "Client.h"
 
 bool LobbyState::OnEnter()
 {
@@ -12,7 +14,7 @@ bool LobbyState::OnEnter()
 	m_text.Load("Assets/Images/nevis.ttf", 100); //downloaded for free
 	m_text.SetColor(0, 0, 0, 255);
 	m_text.SetDimension(1000, 100);
-	m_text.SetText("Press 1 to host a room.\n Press 2 to join a room.\n Press BACKSPACE to go back.");
+	m_text.SetText("1: Host Room 2: Join Room BACKSPACE: Back");
 
 	return true;
 }
@@ -37,6 +39,11 @@ State* LobbyState::Update()
 	if (Input::Instance()->IsKeyPressed(HM_KEY_BACKSPACE))
 	{
 		return new MenuState;
+	}
+
+	if (Input::Instance()->IsKeyPressed(HM_KEY_ESCAPE))
+	{
+		return nullptr;
 	}
 
 	return this;
