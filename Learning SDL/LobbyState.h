@@ -2,6 +2,8 @@
 
 #include <string>
 #include "MenuState.h"
+#include "Server.h"
+#include "Client.h"
 
 class LobbyState : public State
 {
@@ -20,5 +22,7 @@ private:
 	Sprite m_background;
 	Text m_text;
 	Music m_music;
+	Server host;
+	Client client;
 
 };

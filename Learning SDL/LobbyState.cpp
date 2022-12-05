@@ -1,6 +1,4 @@
 #include "LobbyState.h"
-#include "Server.h"
-#include "Client.h"
 
 bool LobbyState::OnEnter()
 {
@@ -29,11 +27,17 @@ State* LobbyState::Update()
 	if (Input::Instance()->IsKeyPressed(HM_KEY_1))
 	{
 		//TODO - server-side code
+		host.Initialize();
+		host.OpenSocket();
+		host.CreateServer();
+		host.Listen();
 	}
 
 	if (Input::Instance()->IsKeyPressed(HM_KEY_2))
 	{
 		//TODO - client-side code
+		client.Initialize();
+		client.OpenSocket();
 	}
 
 	if (Input::Instance()->IsKeyPressed(HM_KEY_BACKSPACE))

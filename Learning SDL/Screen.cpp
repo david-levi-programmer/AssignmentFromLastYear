@@ -16,6 +16,7 @@ bool Screen::Initilize(const std::string & windowTitle, int width, int height)
 	if (SDL_Init(SDL_INIT_EVERYTHING) == -1)
 	{
 		std::cout << "Error initializing SDL." << std::endl;
+		system("pause");
 		return false;
 	}
 	//TODO - Switch back to fullscreen before submitting
@@ -24,6 +25,7 @@ bool Screen::Initilize(const std::string & windowTitle, int width, int height)
 	if (!m_window)
 	{
 		std::cout << "Error creating game window." << std::endl;
+		system("pause");
 		return false;
 	}
 
@@ -32,6 +34,7 @@ bool Screen::Initilize(const std::string & windowTitle, int width, int height)
 	if (!m_renderer)
 	{
 		std::cout << "Error creating renderer." << std::endl;
+		system("pause");
 		return false;
 	}
 
