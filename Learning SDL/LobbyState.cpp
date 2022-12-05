@@ -5,7 +5,7 @@ bool LobbyState::OnEnter()
 	m_background.Load("Assets/Images/MysteryCave.jpg"); //Downloaded from Vecteezy
 	m_background.SetSpriteDimension(1280, 720);
 	m_background.SetImageDimension(1, 1, 1920, 696);
-	//TODO - Find good lobby music
+	
 	m_music.Load("Assets/Audio/Music/All That.mp3"); // Composed by Bensound and downloaded from his website
 	m_music.Play(Music::PlayLoop::PlayEndless);
 
@@ -26,8 +26,8 @@ State* LobbyState::Update()
 
 	if (Input::Instance()->IsKeyPressed(HM_KEY_1))
 	{
-		//TODO - server-side code
 		host.Initialize();
+		host.CreateServer();
 		host.OpenSocket();
 		host.CreateServer();
 		host.Listen();
@@ -35,7 +35,6 @@ State* LobbyState::Update()
 
 	if (Input::Instance()->IsKeyPressed(HM_KEY_2))
 	{
-		//TODO - client-side code
 		client.Initialize();
 		client.OpenSocket();
 	}

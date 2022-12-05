@@ -22,6 +22,7 @@ bool Server::Listen()
 
     if (!tempSocket)
     {
+        std::cout << "Couldn't connect to client" << std::endl;
         SDL_Delay(500);
         return false;
     }
@@ -29,6 +30,16 @@ bool Server::Listen()
     m_clientSocket = tempSocket;
     
     return true;
+}
+
+bool Server::Send(const std::string& message)
+{
+    return false;
+}
+
+bool Server::Receive(std::string& message)
+{
+    return false;
 }
 
 void Server::Close()

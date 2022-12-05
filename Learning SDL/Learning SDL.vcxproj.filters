@@ -37,11 +37,23 @@
     <Filter Include="Header Files\Game State">
       <UniqueIdentifier>{1fcdfd21-8705-4936-b1e1-35099142eb12}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Networking">
+    <Filter Include="Source Files\Components\Networking">
       <UniqueIdentifier>{9cf522c0-b4a4-468c-a607-abbb0f660310}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Networking">
+    <Filter Include="Header Files\Components\Networking">
       <UniqueIdentifier>{01de8cbf-dd4f-4a3f-aba6-07f3ec4b272b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Components\Audio">
+      <UniqueIdentifier>{18bb3dce-0c95-4dc7-bb2e-20f869be0347}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Components\Audio">
+      <UniqueIdentifier>{f185af32-e19b-4258-8c02-2746a4223787}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Components\Visual">
+      <UniqueIdentifier>{ee838bfa-4ffb-4f82-ae84-a3d69490b94b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Components\Visual">
+      <UniqueIdentifier>{0b4ac0a8-e220-416f-9b6e-9df913ef05bf}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -57,22 +69,10 @@
     <ClCompile Include="Player.cpp">
       <Filter>Source Files\GameObjects</Filter>
     </ClCompile>
-    <ClCompile Include="Music.cpp">
-      <Filter>Source Files\Components</Filter>
-    </ClCompile>
-    <ClCompile Include="Sound.cpp">
-      <Filter>Source Files\Components</Filter>
-    </ClCompile>
-    <ClCompile Include="Text.cpp">
-      <Filter>Source Files\Components</Filter>
-    </ClCompile>
     <ClCompile Include="Score.cpp">
       <Filter>Source Files\GameObjects</Filter>
     </ClCompile>
     <ClCompile Include="BoxCollider.cpp">
-      <Filter>Source Files\Components</Filter>
-    </ClCompile>
-    <ClCompile Include="Sprite.cpp">
       <Filter>Source Files\Components</Filter>
     </ClCompile>
     <ClCompile Include="Game.cpp">
@@ -97,13 +97,31 @@
       <Filter>Source Files\Game State</Filter>
     </ClCompile>
     <ClCompile Include="TCPConnection.cpp">
-      <Filter>Source Files\Networking</Filter>
+      <Filter>Source Files\Components\Networking</Filter>
     </ClCompile>
     <ClCompile Include="Server.cpp">
-      <Filter>Source Files\Networking</Filter>
+      <Filter>Source Files\Components\Networking</Filter>
     </ClCompile>
     <ClCompile Include="Client.cpp">
-      <Filter>Source Files\Networking</Filter>
+      <Filter>Source Files\Components\Networking</Filter>
+    </ClCompile>
+    <ClCompile Include="Music.cpp">
+      <Filter>Source Files\Components\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound.cpp">
+      <Filter>Source Files\Components\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>Source Files\Components\Visual</Filter>
+    </ClCompile>
+    <ClCompile Include="Text.cpp">
+      <Filter>Source Files\Components\Visual</Filter>
+    </ClCompile>
+    <ClCompile Include="Message.cpp">
+      <Filter>Source Files\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="MultiPlayState.cpp">
+      <Filter>Source Files\Game State</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -116,22 +134,10 @@
     <ClInclude Include="Screen.h">
       <Filter>Header Files\Main</Filter>
     </ClInclude>
-    <ClInclude Include="Music.h">
-      <Filter>Header Files\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="Sound.h">
-      <Filter>Header Files\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="Text.h">
-      <Filter>Header Files\Components</Filter>
-    </ClInclude>
     <ClInclude Include="Score.h">
       <Filter>Header Files\GameObjects</Filter>
     </ClInclude>
     <ClInclude Include="BoxCollider.h">
-      <Filter>Header Files\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="Sprite.h">
       <Filter>Header Files\Components</Filter>
     </ClInclude>
     <ClInclude Include="Game.h">
@@ -162,13 +168,31 @@
       <Filter>Header Files\Game State</Filter>
     </ClInclude>
     <ClInclude Include="TCPConnection.h">
-      <Filter>Header Files\Networking</Filter>
+      <Filter>Header Files\Components\Networking</Filter>
     </ClInclude>
     <ClInclude Include="Server.h">
-      <Filter>Header Files\Networking</Filter>
+      <Filter>Header Files\Components\Networking</Filter>
     </ClInclude>
     <ClInclude Include="Client.h">
-      <Filter>Header Files\Networking</Filter>
+      <Filter>Header Files\Components\Networking</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound.h">
+      <Filter>Header Files\Components\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="Music.h">
+      <Filter>Header Files\Components\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>Header Files\Components\Visual</Filter>
+    </ClInclude>
+    <ClInclude Include="Text.h">
+      <Filter>Header Files\Components\Visual</Filter>
+    </ClInclude>
+    <ClInclude Include="Message.h">
+      <Filter>Header Files\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="MultiPlayState.h">
+      <Filter>Header Files\Game State</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
