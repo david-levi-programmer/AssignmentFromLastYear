@@ -6,7 +6,7 @@ bool LobbyState::OnEnter()
 	m_background.SetSpriteDimension(1280, 720);
 	m_background.SetImageDimension(1, 1, 1920, 696);
 	//TODO - Find good lobby music
-	m_music.Load("Assets/Audio/Music/Hey!.mp3"); // Composed by Bensound and downloaded from his website
+	m_music.Load("Assets/Audio/Music/All That.mp3"); // Composed by Bensound and downloaded from his website
 	m_music.Play(Music::PlayLoop::PlayEndless);
 
 	m_text.Load("Assets/Images/nevis.ttf", 100); //downloaded for free
