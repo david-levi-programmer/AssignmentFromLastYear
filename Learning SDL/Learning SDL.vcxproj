@@ -171,6 +171,7 @@
     <ClCompile Include="Sound.cpp" />
     <ClCompile Include="TCPConnection.cpp" />
     <ClCompile Include="Text.cpp" />
+    <ClCompile Include="ResultsState.cpp" />
     <ClCompile Include="WinState.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -196,6 +197,7 @@
     <ClInclude Include="TCPConnection.h" />
     <ClInclude Include="Text.h" />
     <ClInclude Include="Vector.h" />
+    <ClInclude Include="ResultsState.h" />
     <ClInclude Include="WinState.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

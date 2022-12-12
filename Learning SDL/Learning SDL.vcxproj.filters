@@ -123,6 +123,9 @@
     <ClCompile Include="MultiPlayState.cpp">
       <Filter>Source Files\Game State</Filter>
     </ClCompile>
+    <ClCompile Include="ResultsState.cpp">
+      <Filter>Source Files\Game State</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameObject.h">
@@ -192,6 +195,9 @@
       <Filter>Header Files\GameObjects</Filter>
     </ClInclude>
     <ClInclude Include="MultiPlayState.h">
+      <Filter>Header Files\Game State</Filter>
+    </ClInclude>
+    <ClInclude Include="ResultsState.h">
       <Filter>Header Files\Game State</Filter>
     </ClInclude>
   </ItemGroup>

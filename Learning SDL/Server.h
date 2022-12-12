@@ -2,7 +2,6 @@
 
 #include <string>
 #include "TCPConnection.h"
-#include "Message.h"
 
 class Server : public TCPConnection
 {

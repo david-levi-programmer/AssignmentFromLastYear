@@ -30,16 +30,41 @@ State* MultiPlayState::Update()
 		return nullptr;
 	}
 
+	//=======================Object States==================
+
+	m_player.Update();
+	m_coin.Update();
+
+	//=======================Collision======================
+
+	if (m_player.GetCollider().IsColliding(m_coin.GetCollider()))
+	{
+		m_score.AddtoScore();
+		m_coin.SetPosition(rand() % 790, 520);
+	}
+
+	//=======================Timer/Score====================
+
+	if (m_score.VictoryCheck() == true)
+	{
+		return new WinState;
+	}
+
+	//======================================================
+
 	return this;
 }
 
 bool MultiPlayState::Render()
 {
-    return false;
+	m_message.Render();
+
+    return true;
 }
 
 void MultiPlayState::OnExit()
 {
 	m_host.ShutDown();
 	m_client.ShutDown();
+	m_music.Unload();
 }

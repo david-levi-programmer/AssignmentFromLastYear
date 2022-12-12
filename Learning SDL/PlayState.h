@@ -7,7 +7,6 @@
 #include "State.h"
 #include "Sound.h"
 #include "Score.h"
-#include "Text.h"
 #include "BoxCollider.h"
 #include "Coin.h"
 #include "WinState.h"
@@ -29,7 +28,6 @@ private:
 	Score m_score;
 	Music m_music;
 	Player m_player;
-	Text m_text;
 	Coin m_coin;
 
 };

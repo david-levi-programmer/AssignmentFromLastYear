@@ -4,6 +4,7 @@
 #include <string>
 #include <SDL.h>
 #include <SDL_net.h>
+#include "Message.h"
 
 class TCPConnection
 {
@@ -21,5 +22,6 @@ private:
 
 	IPaddress m_IP;
 	TCPsocket m_socket;
+	Message m_message;
 
 };

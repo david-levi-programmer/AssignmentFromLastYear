@@ -23,7 +23,6 @@ private:
 	Score m_score;
 	Music m_music;
 	Player m_player;
-	Text m_text;
 	Message m_message;
 	Coin m_coin;
 	Server m_host;

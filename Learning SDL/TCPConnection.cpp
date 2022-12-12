@@ -4,7 +4,7 @@ bool TCPConnection::Initialize()
 {
     if (SDLNet_Init() == -1)
     {
-        std::cout << "Networking sub-system did not initialize properly." << std::endl;
+        m_message.SetMessage("Networking sub-system did not initialize properly.");
         system("pause");
         return false;
     }
@@ -18,7 +18,7 @@ bool TCPConnection::OpenSocket()
 
     if (!m_socket)
     {
-        std::cout << "Could not open listening socket" <<  std::endl;
+        m_message.SetMessage("Could not open listening socket");
         system("pause");
         return false;
     }

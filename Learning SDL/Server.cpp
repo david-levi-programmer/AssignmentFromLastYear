@@ -6,7 +6,7 @@ bool Server::CreateServer()
 {
     if (SDLNet_ResolveHost(&m_IP, nullptr, port) == -1)
     {
-        std::cout << "Could not create server" << std::endl;
+        m_message.SetMessage("Could not create server");
         system("pause");
         return false;
     }
@@ -22,7 +22,7 @@ bool Server::Listen()
 
     if (!tempSocket)
     {
-        std::cout << "Couldn't connect to client" << std::endl;
+        m_message.SetMessage("Couldn't connect to client.");
         SDL_Delay(500);
         return false;
     }
