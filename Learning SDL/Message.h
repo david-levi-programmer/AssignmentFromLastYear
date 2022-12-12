@@ -12,6 +12,8 @@ public:
 	Message(const std::string& message = "");
 	virtual ~Message();
 
+	void SetMessage(std::string message);
+
 	virtual void Update() {}
 	virtual void Render();
 

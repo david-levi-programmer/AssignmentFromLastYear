@@ -1,15 +1,10 @@
 #pragma once
 
 #include <memory>
-#include "Sprite.h"
-#include "Music.h"
-#include "Player.h"
 #include "State.h"
-#include "Sound.h"
-#include "Score.h"
-#include "Text.h"
-#include "BoxCollider.h"
-#include "Coin.h"
+#include "PlayState.h"
+#include "Client.h"
+#include "Server.h"
 
 class MultiPlayState : public State
 {
@@ -29,6 +24,9 @@ private:
 	Music m_music;
 	Player m_player;
 	Text m_text;
+	Message m_message;
 	Coin m_coin;
+	Server m_host;
+	Client m_client;
 
 };

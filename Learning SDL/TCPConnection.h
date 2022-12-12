@@ -10,7 +10,7 @@ class TCPConnection
 
 public:
 
-	TCPConnection();
+	TCPConnection() {}
 
 	bool Initialize();
 	bool OpenSocket();

@@ -26,17 +26,19 @@ State* LobbyState::Update()
 
 	if (Input::Instance()->IsKeyPressed(HM_KEY_1))
 	{
-		host.Initialize();
-		host.CreateServer();
-		host.OpenSocket();
-		host.CreateServer();
-		host.Listen();
+		//TODO - Move all this to MultiPlayState after creating struct to pass on choice
+		m_host.Initialize();
+		m_host.CreateServer();
+		m_host.OpenSocket();
+		m_host.CreateServer();
+		m_host.Listen();
 	}
 
 	if (Input::Instance()->IsKeyPressed(HM_KEY_2))
 	{
-		client.Initialize();
-		client.OpenSocket();
+		//TODO - Move all this to MultiPlayState after creating struct to pass on choice
+		m_client.Initialize();
+		m_client.OpenSocket();
 	}
 
 	if (Input::Instance()->IsKeyPressed(HM_KEY_BACKSPACE))

@@ -20,7 +20,6 @@ private:
 	TCPsocket m_listenSocket;
 	TCPsocket m_clientSocket;
 	IPaddress m_IP;
-	TCPsocket m_socket;
 	Message m_message;
 
 };

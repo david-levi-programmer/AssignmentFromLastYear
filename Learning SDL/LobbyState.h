@@ -22,7 +22,7 @@ private:
 	Sprite m_background;
 	Text m_text;
 	Music m_music;
-	Server host;
-	Client client;
+	Server m_host;
+	Client m_client;
 
 };

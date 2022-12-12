@@ -1,10 +1,5 @@
 #include "TCPConnection.h"
 
-TCPConnection::TCPConnection()
-{
-
-}
-
 bool TCPConnection::Initialize()
 {
     if (SDLNet_Init() == -1)
