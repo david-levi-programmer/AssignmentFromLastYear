@@ -18,7 +18,7 @@ bool Server::Listen()
 {
     TCPsocket tempSocket = nullptr;
 
-    tempSocket = SDLNet_TCP_Accept(m_listenSocket);
+    tempSocket = SDLNet_TCP_Accept(m_listenSocket); //this bit specifically
 
     if (!tempSocket)
     {

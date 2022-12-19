@@ -17,6 +17,7 @@ protected:
 	struct Network
 	{
 		int m_selection;
+		//TODO - Add variables to struct for ResultsState
 	};
 	//variable will contain whether player chooses to host or a join a room
 	Network lobbyChoice;

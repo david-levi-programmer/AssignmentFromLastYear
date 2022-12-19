@@ -1,8 +1,10 @@
 #pragma once
 
 #include <memory>
+#include <thread>
 #include "State.h"
 #include "PlayState.h"
+#include "ResultsState.h"
 #include "Client.h"
 #include "Server.h"
 

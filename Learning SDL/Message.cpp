@@ -2,6 +2,7 @@
 
 Message::Message(const std::string& message)
 {
+
 }
 
 Message::~Message()

@@ -61,7 +61,8 @@ State* MultiPlayState::Update()
 
 	if (m_score.VictoryCheck() == true)
 	{
-		return new WinState;
+		//TODO - Add variables to struct for ResultsState
+		return new ResultsState;
 	}
 
 	//======================================================
