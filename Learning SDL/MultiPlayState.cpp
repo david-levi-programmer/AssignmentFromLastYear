@@ -1,6 +1,6 @@
 #include "MultiPlayState.h"
 
-bool MultiPlayState::OnEnter()
+bool MultiPlayState::OnEnter() //TODO - Add struct variable to OnEnter
 {
 	m_background.Load("Assets/Images/MysteryCave.jpg"); //Downloaded from Vecteezy
 	m_background.SetSpriteDimension(1280, 720);

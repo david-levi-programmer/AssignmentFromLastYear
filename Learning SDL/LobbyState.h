@@ -17,6 +17,15 @@ public:
 	bool Render() override;
 	void OnExit() override;
 
+protected:
+
+	struct Network
+	{
+		
+	};
+	//variable will contain whether player chooses to host or a join a room
+	Network lobbyChoice;
+
 private:
 
 	Sprite m_background;

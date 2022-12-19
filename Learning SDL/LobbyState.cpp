@@ -27,6 +27,7 @@ State* LobbyState::Update()
 	if (Input::Instance()->IsKeyPressed(HM_KEY_1))
 	{
 		//TODO - Move all this to MultiPlayState after creating struct to pass on choice
+		//or make a seperate server version of MultiPlayState and move it there
 		m_host.Initialize();
 		m_host.CreateServer();
 		m_host.OpenSocket();
@@ -37,6 +38,7 @@ State* LobbyState::Update()
 	if (Input::Instance()->IsKeyPressed(HM_KEY_2))
 	{
 		//TODO - Move all this to MultiPlayState after creating struct to pass on choice
+		//or make a seperate client version of MultiPlayState and move it there
 		m_client.Initialize();
 		m_client.OpenSocket();
 	}
