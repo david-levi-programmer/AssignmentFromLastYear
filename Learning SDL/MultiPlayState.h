@@ -11,7 +11,7 @@ class MultiPlayState : public State
 
 public:
 
-	bool OnEnter() override; //TODO - Add struct variable to OnEnter
+	bool OnEnter() override;
 	State* Update() override;
 	bool Render() override;
 	void OnExit() override;

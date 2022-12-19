@@ -2,6 +2,7 @@
 
 #include <string>
 #include "MenuState.h"
+#include "MultiPlayState.h"
 #include "Server.h"
 #include "Client.h"
 
@@ -16,15 +17,6 @@ public:
 	State* Update() override;
 	bool Render() override;
 	void OnExit() override;
-
-protected:
-
-	struct Network
-	{
-		
-	};
-	//variable will contain whether player chooses to host or a join a room
-	Network lobbyChoice;
 
 private:
 

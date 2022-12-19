@@ -12,4 +12,13 @@ public:
 	virtual bool Render() = 0;
 	virtual void OnExit() = 0;
 
+protected:
+
+	struct Network
+	{
+		int m_selection;
+	};
+	//variable will contain whether player chooses to host or a join a room
+	Network lobbyChoice;
+
 };

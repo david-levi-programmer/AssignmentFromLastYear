@@ -1,7 +1,21 @@
 #include "MultiPlayState.h"
 
-bool MultiPlayState::OnEnter() //TODO - Add struct variable to OnEnter
+bool MultiPlayState::OnEnter()
 {
+	if (lobbyChoice.m_selection = Input::Instance()->IsKeyPressed(HM_KEY_1))
+	{
+		m_host.Initialize();
+		m_host.CreateServer();
+		m_host.OpenSocket();
+		//m_host.Listen(); //This bit specifically is what it doesn't like
+	}
+
+	if (lobbyChoice.m_selection = Input::Instance()->IsKeyPressed(HM_KEY_2))
+	{
+		m_client.Initialize();
+		m_client.OpenSocket();
+	}
+	
 	m_background.Load("Assets/Images/MysteryCave.jpg"); //Downloaded from Vecteezy
 	m_background.SetSpriteDimension(1280, 720);
 	m_background.SetImageDimension(1, 1, 1920, 696);
