@@ -4,32 +4,37 @@ bool MultiPlayState::OnEnter()
 {
 	if (lobbyChoice.m_selection = Input::Instance()->IsKeyPressed(HM_KEY_1))
 	{
+		m_message.SetMessage("Waiting for clients...");
 		m_host.Initialize();
 		m_host.CreateServer();
 		m_host.OpenSocket();
-		//m_host.Listen(); //This bit specifically is what it doesn't like
+		m_host.Listen(); //This bit specifically is what it doesn't like
 	}
 
 	if (lobbyChoice.m_selection = Input::Instance()->IsKeyPressed(HM_KEY_2))
 	{
 		m_client.Initialize();
 		m_client.OpenSocket();
+		m_message.SetMessage("Welcome!");
 	}
 	
 	m_background.Load("Assets/Images/MysteryCave.jpg"); //Downloaded from Vecteezy
 	m_background.SetSpriteDimension(1280, 720);
 	m_background.SetImageDimension(1, 1, 1920, 696);
 
-	m_player.SetPosition(0, 520);
-	m_player.SetAngle(0.0);
-	m_player.SetSize(10, 10);
-	m_player.SetSpeed(5);
+	m_player1.SetPosition(0, 520);
+	m_player1.SetAngle(0.0);
+	m_player1.SetSize(10, 10);
+	m_player1.SetSpeed(5);
+	
+	m_player2.SetPosition(600, 520);
+	m_player2.SetAngle(0.0);
+	m_player2.SetSize(10, 10);
+	m_player2.SetSpeed(5);
 
 	m_coin.SetPosition(rand() % 790, 520);
 	m_coin.SetAngle(0.0);
 	m_coin.SetSize(10, 10);
-
-	m_message.SetMessage("Welcome!");
 
 	m_music.Load("Assets/Audio/Music/Creative Minds.mp3"); // Composed by Bensound and downloaded from his website
 	m_music.Play(Music::PlayLoop::PlayEndless);
@@ -46,22 +51,35 @@ State* MultiPlayState::Update()
 
 	//=======================Object States==================
 
-	m_player.Update();
+	m_player1.Update();
+	m_player2.Update(); //TODO - How the heck is THIS going to work???
 	m_coin.Update();
 
 	//=======================Collision======================
 
-	if (m_player.GetCollider().IsColliding(m_coin.GetCollider()))
+	if (m_player1.GetCollider().IsColliding(m_coin.GetCollider()))
 	{
-		m_score.AddtoScore();
+		m_score1.AddtoScore();
+		m_coin.SetPosition(rand() % 790, 520);
+	}
+
+	if (m_player2.GetCollider().IsColliding(m_coin.GetCollider()))
+	{
+		m_score2.AddtoScore();
 		m_coin.SetPosition(rand() % 790, 520);
 	}
 
 	//=======================Timer/Score====================
 
-	if (m_score.VictoryCheck() == true)
+	if (m_score1.VictoryCheck() == true)
 	{
-		//TODO - Add variables to struct for ResultsState
+		winner.m_victory = 1;
+		return new ResultsState;
+	}
+	
+	if (m_score2.VictoryCheck() == true)
+	{
+		winner.m_victory = 2;
 		return new ResultsState;
 	}
 

@@ -22,9 +22,11 @@ private:
 
 	bool m_IsGameRunning = true;
 	Sprite m_background;
-	Score m_score;
+	Score m_score1;
+	Score m_score2;
 	Music m_music;
-	Player m_player;
+	Player m_player1;
+	Player m_player2;
 	Message m_message;
 	Coin m_coin;
 	Server m_host;

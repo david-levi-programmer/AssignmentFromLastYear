@@ -16,18 +16,18 @@ bool Server::CreateServer()
 
 bool Server::Listen()
 {
-    TCPsocket tempSocket = nullptr;
+    //TODO - This worked in my last assignment, why not here?
+    m_clientSocket = SDLNet_TCP_Accept(m_listenSocket); //this bit specifically
 
-    tempSocket = SDLNet_TCP_Accept(m_listenSocket); //this bit specifically
-
-    if (!tempSocket)
+    if (!m_clientSocket)
     {
-        m_message.SetMessage("Couldn't connect to client.");
+        m_message.SetMessage("Wating for client...");
         SDL_Delay(500);
-        return false;
     }
-
-    m_clientSocket = tempSocket;
+    else
+    {
+        m_message.SetMessage("Client connected");
+    }
     
     return true;
 }
