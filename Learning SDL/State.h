@@ -20,7 +20,7 @@ protected:
 		int m_victory;
 	};
 
-	Network lobbyChoice; //will contain whether player chooses to host or a join a room
+	Network lobbyChoice; //will contain whether player chooses to host or join a room
 	Network winner; //will contain winner of multiplayer match
 
 };
