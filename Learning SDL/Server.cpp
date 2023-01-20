@@ -26,9 +26,8 @@ bool Server::Listen()
     else
     {
         m_message.SetMessage("Client connected");
+        return true;
     }
-    
-    return true;
 }
 
 bool Server::Send(const std::string& message)

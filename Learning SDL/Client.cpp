@@ -19,7 +19,6 @@ bool Client::Connect()
     if (SDLNet_ResolveHost(&m_IP, ipAddress.c_str(), port) == -1)
     {
         m_message.SetMessage("Couldn't connect to server");
-        system("pause");
         return 0;
     }
 }

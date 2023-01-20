@@ -26,6 +26,7 @@ bool MultiPlayState::OnEnter()
 	if (lobbyChoice.m_selection = Input::Instance()->IsKeyPressed(HM_KEY_2))
 	{
 		m_client.Initialize();
+		m_client.Connect();
 		m_client.OpenSocket();
 		m_message.SetMessage("Welcome!");
 		//=========Loading in client's character============
