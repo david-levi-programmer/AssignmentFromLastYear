@@ -18,10 +18,8 @@ public:
 	void CloseSocket();
 	void ShutDown();
 
-private:
-
-	IPaddress m_IP;
 	TCPsocket m_socket;
+	IPaddress m_IP;
 	Message m_message;
 
 };

@@ -10,9 +10,6 @@ public:
 	//TODO - Figure out messaging system
 	bool Send(const std::string& message);
 	bool Receive(std::string& message);
-
-private:
-
-	Message m_message;
+	bool Connect();
 
 };

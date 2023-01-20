@@ -16,8 +16,7 @@ bool Server::CreateServer()
 
 bool Server::Listen()
 {
-    //TODO - This worked in my last assignment, why not here?
-    m_clientSocket = SDLNet_TCP_Accept(m_listenSocket); //this bit specifically
+    m_clientSocket = SDLNet_TCP_Accept(m_socket);
 
     if (!m_clientSocket)
     {

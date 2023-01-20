@@ -17,9 +17,9 @@ public:
 
 private:
 
-	TCPsocket m_listenSocket = nullptr;
+	//TCPsocket m_listenSocket = nullptr;
 	TCPsocket m_clientSocket = nullptr;
-	IPaddress m_IP;
+	//IPaddress m_IP;
 	Message m_message;
 
 };

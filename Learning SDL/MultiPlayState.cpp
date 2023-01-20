@@ -2,13 +2,25 @@
 
 bool MultiPlayState::OnEnter()
 {
+	m_background.Load("Assets/Images/MysteryCave.jpg"); //Downloaded from Vecteezy
+	m_background.SetSpriteDimension(1280, 720);
+	m_background.SetImageDimension(1, 1, 1920, 696);
+
+	m_music.Load("Assets/Audio/Music/Creative Minds.mp3"); // Composed by Bensound and downloaded from his website
+	m_music.Play(Music::PlayLoop::PlayEndless);
+
 	if (lobbyChoice.m_selection = Input::Instance()->IsKeyPressed(HM_KEY_1))
 	{
-		m_message.SetMessage("Waiting for clients...");
 		m_host.Initialize();
 		m_host.CreateServer();
 		m_host.OpenSocket();
-		m_host.Listen(); //This bit specifically is what it doesn't like
+		m_message.SetMessage("Waiting for clients...");
+		m_host.Listen();
+		//=========Loading in host's character==============
+		m_player1.SetPosition(0, 520);
+		m_player1.SetAngle(0.0);
+		m_player1.SetSize(10, 10);
+		m_player1.SetSpeed(5);
 	}
 
 	if (lobbyChoice.m_selection = Input::Instance()->IsKeyPressed(HM_KEY_2))
@@ -16,28 +28,16 @@ bool MultiPlayState::OnEnter()
 		m_client.Initialize();
 		m_client.OpenSocket();
 		m_message.SetMessage("Welcome!");
+		//=========Loading in client's character============
+		m_player2.SetPosition(600, 520);
+		m_player2.SetAngle(0.0);
+		m_player2.SetSize(10, 10);
+		m_player2.SetSpeed(5);
 	}
 	
-	m_background.Load("Assets/Images/MysteryCave.jpg"); //Downloaded from Vecteezy
-	m_background.SetSpriteDimension(1280, 720);
-	m_background.SetImageDimension(1, 1, 1920, 696);
-
-	m_player1.SetPosition(0, 520);
-	m_player1.SetAngle(0.0);
-	m_player1.SetSize(10, 10);
-	m_player1.SetSpeed(5);
-	
-	m_player2.SetPosition(600, 520);
-	m_player2.SetAngle(0.0);
-	m_player2.SetSize(10, 10);
-	m_player2.SetSpeed(5);
-
 	m_coin.SetPosition(rand() % 790, 520);
 	m_coin.SetAngle(0.0);
 	m_coin.SetSize(10, 10);
-
-	m_music.Load("Assets/Audio/Music/Creative Minds.mp3"); // Composed by Bensound and downloaded from his website
-	m_music.Play(Music::PlayLoop::PlayEndless);
 
 	return true;
 }
@@ -69,7 +69,7 @@ State* MultiPlayState::Update()
 		m_coin.SetPosition(rand() % 790, 520);
 	}
 
-	//=======================Timer/Score====================
+	//=======================Score==========================
 
 	if (m_score1.VictoryCheck() == true)
 	{

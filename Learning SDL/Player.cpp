@@ -2,7 +2,8 @@
 
 Player::Player()
 {
-	m_image[static_cast<unsigned int>(Player::State::Idle)].Load("Assets/Images/protag_idle.png"); //cropped from a sprite downloaded for free from OpenGameArt.org
+	//cropped from a sprite downloaded for free from OpenGameArt.org
+	m_image[static_cast<unsigned int>(Player::State::Idle)].Load("Assets/Images/protag_idle.png");
 	m_image[static_cast<unsigned int>(Player::State::Run)].Load("Assets/Images/protag_run.png");
 	m_image[static_cast<unsigned int>(Player::State::Jump)].Load("Assets/Images/protag_jump.png");
 
