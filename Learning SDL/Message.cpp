@@ -2,7 +2,10 @@
 
 Message::Message(const std::string& message)
 {
-
+	if (Input::Instance()->IsKeyPressed(HM_KEY_M))
+	{
+		//TODO - Figure out this stuff out. Or remove it if there's no time.
+	}
 }
 
 Message::~Message()

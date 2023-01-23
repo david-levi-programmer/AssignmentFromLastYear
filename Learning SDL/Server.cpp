@@ -7,6 +7,7 @@ bool Server::CreateServer()
     if (SDLNet_ResolveHost(&m_IP, nullptr, port) == -1)
     {
         m_message.SetMessage("Could not create server");
+        std::cout << "Could not create server" << std::endl; //TODO - Remove before submitting
         system("pause");
         return false;
     }
@@ -18,14 +19,16 @@ bool Server::Listen()
 {
     m_clientSocket = SDLNet_TCP_Accept(m_socket);
 
-    if (!m_clientSocket)
+    while (!m_clientSocket)
     {
         m_message.SetMessage("Wating for client...");
+        std::cout << "." << std::endl; //TODO - Remove before submitting
         SDL_Delay(500);
     }
-    else
+    if (m_clientSocket)
     {
         m_message.SetMessage("Client connected");
+        std::cout << "Client connected" << std::endl; //TODO - Remove before submitting
         return true;
     }
 }
@@ -38,9 +41,4 @@ bool Server::Send(const std::string& message)
 bool Server::Receive(std::string& message)
 {
     return false;
-}
-
-void Server::Close()
-{
-
 }

@@ -12,4 +12,8 @@ public:
 	bool Receive(std::string& message);
 	bool Connect();
 
+private:
+
+	TCPsocket m_clientSocket = nullptr;
+
 };
