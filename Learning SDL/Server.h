@@ -10,7 +10,7 @@ public:
 
 	bool CreateServer();
 	bool Listen();
-	//TODO - Figure out messaging system
+	
 	bool Send(const std::string& message);
 	bool Receive(std::string& message);
 

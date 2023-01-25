@@ -9,7 +9,7 @@ class Message : public GameObject
 
 public:
 
-	Message(const std::string& message = "");
+	Message() {}
 	virtual ~Message();
 
 	void SetMessage(std::string message);

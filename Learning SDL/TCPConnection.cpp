@@ -19,7 +19,7 @@ bool TCPConnection::OpenSocket()
     if (!m_socket)
     {
         m_message.SetMessage("Could not open listening socket");
-        std::cout << "Could not open listening socket" << std::endl; //TODO - Remove before submitting
+        std::cout << "Could not open listening socket" << std::endl;
         system("pause");
         return false;
     }

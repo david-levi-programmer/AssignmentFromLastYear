@@ -19,7 +19,7 @@ bool Screen::Initilize(const std::string & windowTitle, int width, int height)
 		system("pause");
 		return false;
 	}
-	//TODO - Switch back to fullscreen before submitting
+	
 	m_window = SDL_CreateWindow(windowTitle.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_RESIZABLE);
 
 	if (!m_window)

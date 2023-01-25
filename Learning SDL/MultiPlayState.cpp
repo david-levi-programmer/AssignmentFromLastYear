@@ -53,7 +53,7 @@ State* MultiPlayState::Update()
 	//=======================Object States==================
 
 	m_player1.Update();
-	m_player2.Update(); //TODO - How the heck is THIS going to work???
+	m_player2.Update();
 	m_coin.Update();
 
 	//=======================Collision======================
