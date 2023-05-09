@@ -20,7 +20,7 @@ bool Screen::Initilize(const std::string & windowTitle, int width, int height)
 		return false;
 	}
 	
-	m_window = SDL_CreateWindow(windowTitle.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_RESIZABLE);
+	m_window = SDL_CreateWindow(windowTitle.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_FULLSCREEN);
 
 	if (!m_window)
 	{

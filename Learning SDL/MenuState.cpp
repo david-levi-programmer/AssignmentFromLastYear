@@ -12,7 +12,7 @@ bool MenuState::OnEnter()
 	m_text.Load("Assets/Images/nevis.ttf", 100); //downloaded for free
 	m_text.SetColor(0, 0, 0, 255);
 	m_text.SetDimension(1000, 100);
-	m_text.SetText("ENTER: Singleplayer SPACE: Multiplayer ESC: Quit");
+	m_text.SetText("ENTER: Singleplayer ESC: Quit");
 
 	return true;
 }
@@ -27,11 +27,6 @@ State* MenuState::Update()
 	if (Input::Instance()->IsKeyPressed(HM_KEY_RETURN))
 	{
 		return new PlayState;
-	}
-
-	if (Input::Instance()->IsKeyPressed(HM_KEY_SPACE))
-	{
-		return new LobbyState;
 	}
 
 	if (Input::Instance()->IsKeyPressed(HM_KEY_ESCAPE))
